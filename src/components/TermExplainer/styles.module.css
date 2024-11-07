@@ -1,0 +1,34 @@
+.flexBox {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 80px;
+  color: #ffffff;
+}
+
+.leftTextWrap {
+  flex-grow: 1;
+  flex-basis: 260px;
+}
+
+.rightTextWrap {
+  flex-grow: 1;
+  flex-basis: 260px;
+}
+
+/* Media query for smaller screens to stack items in a single column */
+@media (max-width: 768px) {
+  /* Adjust breakpoint as necessary */
+  .leftTextWrap {
+    flex: 1 1 100%; /* Take full width on smaller screens */
+    max-width: 100%;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 599px) {
+  .horizontalBar {
+    width: 50%; /* Adjust the width as needed for smaller screens */
+  }
+}

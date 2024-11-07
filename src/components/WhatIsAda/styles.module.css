@@ -1,0 +1,28 @@
+/* Header.module.css */
+
+/* Responsive styles */
+@media (max-width: 599px) {
+  .mobileNotVisible {
+    display: none;
+  }
+  .mobileVisible {
+    display: flex;
+  }
+}
+
+.rightColumn {
+  padding: 30px;
+}
+
+.adaRoundWrap picture,
+.adaRoundWrap img {
+  max-width: 20rem;
+}
+
+.mobileNotVisible {
+  display: flex;
+}
+
+.mobileVisible {
+  display: none;
+}

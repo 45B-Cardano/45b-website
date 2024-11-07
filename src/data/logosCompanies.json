@@ -1,0 +1,114 @@
+[
+  {
+    "companyName": "Blink Labs",
+    "imageName": "blinklabs",
+    "knownFor": "gOuroboros",
+    "link": "https://blinklabs.io",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Blockfrost",
+    "imageName": "blockfrost",
+    "link": "https://blockfrost.io/",
+    "knownFor": "Blockfrost",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "dcSpark",
+    "imageName": "dcspark",
+    "knownFor": "Flint wallet",
+    "link": "https://dcspark.io",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "DripDropz",
+    "imageName": "DripDropz",
+    "link": "https://dripdropz.io/about-us",
+    "knownFor": "token distribution system",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Guild Operators",
+    "imageName": "guild",
+    "link": "https://cardano-community.github.io/guild-operators/contributors/",
+    "knownFor": "CNTools, gLiveView, Topology Updater",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Iagon",
+    "imageName": "iagon",
+    "link": "https://iagon.com",
+    "knownFor": "decentralized cloud storage",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "jpg.store",
+    "imageName": "jpgstore",
+    "link": "https://www.jpg.store/team",
+    "knownFor": "NFT market place",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Koios Team",
+    "imageName": "koios",
+    "link": "https://koios.rest/community.html#teams",
+    "knownFor": "Decentralized OpenSource API",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "MeshJS",
+    "imageName": "mesh",
+    "link": "https://meshjs.dev/about",
+    "knownFor": "Mesh SDK",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Saib",
+    "imageName": "saib",
+    "link": "https://saib.dev",
+    "knownFor": "Argus (Cardano.Sync)",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Strica",
+    "imageName": "strica",
+    "link": "https://strica.io",
+    "knownFor": "Cardanoscan, Typhon wallet",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "Sundae Labs",
+    "imageName": "sundaelabs",
+    "link": "https://sundae.fi",
+    "knownFor": "Sundae Swap",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "Tastenkunst GmbH",
+    "imageName": "tastenkunst",
+    "link": "https://www.tastenkunst.com",
+    "knownFor": "Eternl wallet",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "TxPipe",
+    "imageName": "txpipe",
+    "link": "https://txpipe.io",
+    "knownFor": "Scrolls, Oura, Pallas",
+    "showCompanyName": true
+  },
+  {
+    "companyName": "utxo AG",
+    "imageName": "utxoag",
+    "link": "https://utxoag.com",
+    "knownFor": "NMKR",
+    "showCompanyName": false
+  },
+  {
+    "companyName": "World Mobile",
+    "imageName": "worldmobile",
+    "link": "https://worldmobile.io",
+    "knownFor": " decentralized internet connectivity",
+    "showCompanyName": false
+  }
+]

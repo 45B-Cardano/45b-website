@@ -1,0 +1,488 @@
+/* stylelint-disable docusaurus/copyright-header */
+
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.taglineContainer {
+  width: 70%;
+}
+
+.backgroundBox {
+  padding-bottom: 40px;
+}
+
+/* 
+  various hero banner setups for subsites on cardano.org, light and dark mode images.
+  Try them out on: https://cardano.org/docs/components/site-hero
+*/
+
+/** heroBannerZoom **/
+
+.heroBannerZoom {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 75%;
+  height: 410px;
+}
+
+html[data-theme="light"] .heroBannerZoom {
+  background-image: url(/img/hero-header-zoom-full.png);
+}
+
+html[data-theme="dark"] .heroBannerZoom {
+  background-image: url(/img/hero-header-zoom-full.png);
+}
+
+/** heroBannerZoomRedWhite **/
+
+.heroBannerZoomRedWhite {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 410px;
+  background-color: #ccd6ee;
+  color: #0033ad;
+}
+
+.heroBannerZoomRedWhite .subtitle {
+  color: #1d1e21;
+}
+
+html[data-theme="light"] .heroBannerZoomRedWhite {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+html[data-theme="dark"] .heroBannerZoomRedWhite {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+/** heroBannerZoomRedWhiteDark **/
+
+.heroBannerZoomRedWhiteDark {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  height: 410px;
+  background-color: #0538af;
+}
+
+html[data-theme="light"] .heroBannerZoomRedWhiteDark {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+html[data-theme="dark"] .heroBannerZoomRedWhiteDark {
+  background-image: url(/img/hero-header-zoom-red-white.png);
+}
+
+/** heroBannerZoomBlueRed **/
+
+.heroBannerZoomBlueRed {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: calc(100% + 220px) center;  
+  height: 410px;
+  background-color: #0538af;
+  background-image: url(/img/hero-header-zoom-blue-red.svg);
+}
+
+
+
+/** heroBannerAda **/
+
+.heroBannerAda {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 50%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 410px;
+  color: #f8f8f5;
+}
+
+html[data-theme="light"] .heroBannerAda {
+  background-image: url(/img/hero-header-ada.webp);
+  background-color: #0538af;
+}
+
+html[data-theme="dark"] .heroBannerAda {
+  background-image: url(/img/hero-header-ada.webp);
+  background-color: #244eaf;
+}
+
+/** heroBannerDots **/
+
+.heroBannerDots {
+  /* fixme: this is actually a zoom variant */
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 35%;
+  height: 410px;
+}
+
+.heroBannerDots::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #305bbd, #0035ad);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+html[data-theme="light"] .heroBannerDots {
+  background-image: url(/img/hero-header-dots.webp);
+}
+
+html[data-theme="dark"] .heroBannerDots {
+  background-image: url(/img/hero-header-dots.webp);
+}
+
+/** heroBannerFluid **/
+
+.heroBannerFluid {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 410px;
+}
+
+html[data-theme="light"] .heroBannerFluid {
+  background-image: url(/img/hero-header-fluid.png);
+  background-color: #5281f7;
+}
+
+html[data-theme="dark"] .heroBannerFluid {
+  background-image: url(/img/hero-header-fluid.png);
+  background-color: #5281f7;
+}
+
+/** heroBannerOverlap **/
+
+.heroBannerOverlap {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 410px;
+}
+
+html[data-theme="light"] .heroBannerOverlap {
+  background-image: url(/img/hero-header-overlap.png);
+  background-color: #5281f7;
+}
+
+html[data-theme="dark"] .heroBannerOverlap {
+  background-image: url(/img/hero-header-overlap.png);
+  background-color: #5281f7;
+}
+
+/** heroBannerWaves **/
+
+.heroBannerWaves {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 5600px;
+  background-position: 30% 15%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-blue.svg);
+  height: 410px;
+}
+
+html[data-theme="light"] .heroBannerWaves {
+
+  background-color: #0538af;
+}
+
+html[data-theme="dark"] .heroBannerWaves {
+  background-color: #244eaf;
+}
+
+/** heroBannerStarbust **/
+
+.heroBannerStarburst {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-starburst.svg);
+  height: 410px;
+}
+
+.heroBannerStarburst::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #305bbd, #0035ad);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+/** heroBannerBraidBlue **/
+
+.heroBannerBraidBlue {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1600px;
+  background-position: 0% 85%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-blue.svg);
+  height: 410px;
+}
+
+.heroBannerBraidBlue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+/** heroBannerBraidRedBlue **/
+
+.heroBannerBraidRedBlue {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1600px;
+  background-position: 0% 85%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-red-blue.svg);
+  height: 410px;
+}
+
+.heroBannerBraidRedBlue::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+/** heroBannerBraidBlack **/
+
+.heroBannerBraidBlack {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1600px;
+  background-position: 0% 85%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-black.svg);
+  height: 410px;
+}
+
+.heroBannerBraidBlack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #011034);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+html[data-theme="dark"] .heroBannerBraidBlack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #597cd0, #0035ad);
+}
+
+/** heroBannerOuroboros **/
+.heroBannerOuroboros {
+  padding: 4rem 2rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background-size: 1900px;
+  background-position: 0% 2%;
+  background-repeat: no-repeat;
+  background-image: url(/img/hero-header-braid-black.svg);
+  height: 410px;
+}
+
+.heroBannerOuroboros::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(315deg, #305bbd, #0035ad);
+  z-index: -1; /* Ensure the gradient is behind the content */
+}
+
+.ouroborosLogo {
+  color: #ffffff;
+  max-width: 30rem;
+}
+
+/* screen size changes */
+@media screen and (max-width: 576px) {
+  .taglineContainer {
+    width: 100%;
+  }
+  .heroBannerAda,
+  .heroBannerZoom,
+  .heroBannerZoomRedWhite,
+  .heroBannerDots,
+  .heroBannerFluid,
+  .heroBannerOverlap,
+  .heroBannerWaves,
+  .heroBannerStarburst,
+  .heroBannerBraidBlue,
+  .heroBannerBraidRedBlue {
+    padding: 2rem 1rem; /* Reduced padding */
+    height: auto; /* Adjust height dynamically */
+  }
+  .backgroundBox {
+    padding-bottom: 20px; /* Reduce space at the bottom */
+  }
+  .heroBannerZoomBlueRed {
+    background-position: left;  
+    background-size: 700px
+  }
+}
+
+@media screen and (max-width: 966px) {
+  .taglineContainer {
+    width: 100%;
+  }
+  .heroBannerZoom {
+    padding: 4rem;
+  }
+  .heroBannerZoomRedWhite {
+    padding: 4rem;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+  .heroBannerAda {
+    padding: 4rem;
+    background-size: 100%;
+    background-position: top right;
+  }
+  .heroBannerDots {
+    padding: 4rem;
+  }
+  .heroBannerFluid {
+    padding: 4rem;
+  }
+  .heroBannerOverlap {
+    padding: 4rem;
+  }
+  .heroBannerWaves {
+    padding: 4rem;
+     
+  }
+  .heroBannerZoomBlueRed {
+    background-position: calc(100% + 100px) center;  
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .heroBannerZoom {
+    background-position: 34% 50%;
+  }
+  /*
+  .heroBannerZoomRedWhite {
+     
+  }
+  */
+  .heroBannerAda {
+    background-position: 50% 20%;
+  }
+  .heroBannerDots {
+    background-position: 50% 35%;
+  }
+  .heroBannerFluid {
+    background-position: 50% 50%;
+  }
+  .heroBannerOverlap {
+    background-position: 34% 50%;
+  }
+  .heroBannerWaves {
+    padding: 4rem 2rem;
+    background-size: 4000px;
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .heroBannerZoom {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroBannerZoomRedWhite {
+    background-repeat: no-repeat;
+  }
+  .heroBannerAda {
+    background-size: 30%;
+    background-position: top center;
+  }
+  .heroBannerDots {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroBannerFluid {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroBannerWaves {
+    background-size: 6800px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heroBannerAda {
+    background-position: right 50% bottom;
+  }
+}
+

@@ -1,0 +1,15 @@
+.leftColumn {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.rightColumn {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+}
+
+.quote {
+  margin-bottom: 40px;
+}

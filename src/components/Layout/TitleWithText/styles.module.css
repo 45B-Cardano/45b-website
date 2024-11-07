@@ -1,0 +1,23 @@
+.titleTypeRed {
+  color: rgb(255, 118, 118);
+}
+
+.titleTypeGreen {
+  color: rgb(59, 121, 130);
+}
+
+.titleTypeBlack {
+  color: var(--ifm-color-base);
+}
+
+html[data-theme="dark"] {
+  .titleTypeGreen {
+    color: rgb(78, 136, 145);
+  }
+}
+
+.titleWithTextWrap ul {
+  list-style-type: disc; /* This makes standard bullets */
+  margin-left: 20px; /* Adjust indentation of the list */
+  padding-left: 10px; 
+}
