@@ -84,9 +84,9 @@ const config = {
       image: "img/og/default.jpg",
       navbar: {
         logo: {
-          alt: "Cardano Logo",
-          src: "img/cardano-logo-blue.svg",
-          srcDark: "img/cardano-logo-white.svg",
+          alt: "45B Logo",
+          src: "img/45b-logo-light.svg",
+          srcDark: "img/45b-logo-dark.svg",
         },
         items: [
           {
