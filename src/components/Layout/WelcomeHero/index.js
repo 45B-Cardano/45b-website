@@ -12,7 +12,7 @@ function WelcomeHero({ title, description }) {
           <h1 className="hero__title">{title}</h1>
           <p className="hero__subtitle">{description}</p>
         </div>
-        <div className={styles.cta}>
+        {/* <div className={styles.cta}>
           <Link
             className={clsx("button button--primary button--lg", styles.button)}
             to="/where-to-get-ada"
@@ -25,7 +25,7 @@ function WelcomeHero({ title, description }) {
           >
             Start Building
           </Link>
-        </div>
+        </div> */}
 
         <div className="sectionCaret">
           <svg x="0px" y="0px" viewBox="0 0 2000 30">

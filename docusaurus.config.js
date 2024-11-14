@@ -15,20 +15,20 @@ const vars = require("./variables");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Cardano",
-  tagline: "Making The World Work Better For All",
+  title: "45B - Cardano Enablement",
+  tagline: "Onboarding the world to Web3",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://cardano.org",
+  url: "https://45b.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "cardano-foundation",
-  projectName: "www-cardano-org",
+  organizationName: "45B - Cardano Enablement",
+  projectName: "45b-io",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -68,11 +68,11 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-        gtag: {
-          // don't be evil
-          trackingID: "GTM-5BC4HH7",
-          anonymizeIP: true,
-        },
+        // gtag: {
+        //   // don't be evil
+        //   trackingID: "GTM-5BC4HH7",
+        //   anonymizeIP: true,
+        // },
       }),
     ],
   ],
@@ -94,51 +94,52 @@ const config = {
             label: "Learn",
             position: "left",
             items: [
-              { to: "/discover-cardano", label: "Discover Cardano" },
-              { to: "/what-is-ada", label: "What is ada?" },
-              { to: "/what-is-ada#wallets", label: "Find Cardano wallets" },
-              { to: "/where-to-get-ada", label: "Where to get ada?" },
-              { to: "/stake-pool-delegation", label: "Delegate your stake" },
-              { to: "/stake-pool-operation", label: "Operate a stake pool" },
-              { to: "/governance", label: "Participate in governance" },
-              { to: "/ouroboros", label: "What is Ouroboros?" },
-              { to: "/hardforks", label: "Which hard forks were there?" },
-              { to: "/genesis", label: "About Genesis Distribution" },
-              {
-                href: "https://explorer.cardano.org",
-                label: "Explore the Cardano blockchain",
-              },
+              { to: "/web3", label: "Web3 Workshops" },
+              // { to: "/discover-cardano", label: "Discover Cardano" },
+              // { to: "/what-is-ada", label: "What is ada?" },
+              // { to: "/what-is-ada#wallets", label: "Find Cardano wallets" },
+              // // { to: "/where-to-get-ada", label: "Where to get ada?" },
+              // { to: "/stake-pool-delegation", label: "Delegate your stake" },
+              // // { to: "/stake-pool-operation", label: "Operate a stake pool" },
+              // { to: "/governance", label: "Participate in governance" },
+              // // { to: "/ouroboros", label: "What is Ouroboros?" },
+              // { to: "/hardforks", label: "Which hard forks were there?" },
+              // { to: "/genesis", label: "About Genesis Distribution" },
+              // {
+              //   href: "https://explorer.cardano.org",
+              //   label: "Explore the Cardano blockchain",
+              // },
             ],
           },
-          {
-            /*to: '/community', TODO*/
-            label: "Community",
-            position: "left",
-            items: [
-              { to: "/community-code-of-conduct", label: "Code of Conduct" },
-              { to: "/ambassadors", label: "Cardano Ambassadors" },
-              { to: "/newsletter", label: "Newsletter" },
-              { to: "/#follow", label: "Follow Cardano" },
-              { href: "https://forum.cardano.org", label: "Cardano Forum" },
-              {
-                href: "https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046",
-                label: "Social Channels",
-              },
-            ],
-          },
-          {
-            /* to: '/developers', TODO*/
-            label: "Developers",
-            position: "left",
-            items: [
-              { to: "/developers", label: "Start building on Cardano" },
-              { to: "/research", label: "Cardano Research" },
-              { to: "/exchanges", label: "Integrate Cardano" },
-            ],
-          },
+          // {
+          //   /*to: '/community', TODO*/
+          //   label: "Community",
+          //   position: "left",
+          //   items: [
+          //     { to: "/community-code-of-conduct", label: "Code of Conduct" },
+          //     { to: "/ambassadors", label: "Cardano Ambassadors" },
+          //     { to: "/newsletter", label: "Newsletter" },
+          //     { to: "/#follow", label: "Follow Cardano" },
+          //     { href: "https://forum.cardano.org", label: "Cardano Forum" },
+          //     {
+          //       href: "https://forum.cardano.org/t/cardano-stay-safe-series-official-community-channel-list/20046",
+          //       label: "Social Channels",
+          //     },
+          //   ],
+          // },
+          // {
+          //   /* to: '/developers', TODO*/
+          //   label: "Developers",
+          //   position: "left",
+          //   items: [
+          //     { to: "/developers", label: "Start building on Cardano" },
+          //     { to: "/research", label: "Cardano Research" },
+          //     { to: "/exchanges", label: "Integrate Cardano" },
+          //   ],
+          // },
           {
             to: "/enterprise",
-            label: "Enterprise",
+            label: "Industries",
             position: "left",
             items: [
               { to: "/enterprise#education", label: "Education" },
@@ -158,20 +159,20 @@ const config = {
             label: 'Tutorial',
           },
           */
-          {
-            to: "/news",
-            label: "News",
-            position: "left",
-            items: [
-              { to: "/news", label: "All Articles (Chronological)" },
-              { to: "/news/tags/community-digest", label: "Community Digest" },
-              { to: "/news/tags/education", label: "Education" },
-              { to: "/news/tags/development", label: "Development" },
-              { to: "/news/tags/governance", label: "Governance" },
-              { to: "/news/tags/scaling", label: "Scaling" },
-              { to: "/news/tags", label: "View Tags" },
-            ],
-          },
+          // {
+          //   to: "/news",
+          //   label: "News",
+          //   position: "left",
+          //   items: [
+          //     { to: "/news", label: "All Articles (Chronological)" },
+          //     { to: "/news/tags/community-digest", label: "Community Digest" },
+          //     { to: "/news/tags/education", label: "Education" },
+          //     { to: "/news/tags/development", label: "Development" },
+          //     { to: "/news/tags/governance", label: "Governance" },
+          //     { to: "/news/tags/scaling", label: "Scaling" },
+          //     { to: "/news/tags", label: "View Tags" },
+          //   ],
+          // },
           {
             href: `${vars.repository}`,
             position: "right",
@@ -179,110 +180,110 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: "dark",
-        links: [
-          /* we may want to hide this, and link it only via localhost link in the read me */
-          /*
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          */
-          {
-            title: "Entities",
-            items: [
-              {
-                label: "Cardano Foundation",
-                to: "/entities?tab=cardanofoundation",
-              },
-              {
-                label: "EMURGO",
-                to: "/entities?tab=emurgo",
-              },
-              {
-                label: "Input Output",
-                href: "/entities?tab=iog",
-              },
-              {
-                label: "Intersect",
-                href: "/entities?tab=intersect",
-              },
-              {
-                label: "PRAGMA",
-                href: "/entities?tab=pragma",
-              },
-              {
-                label: "More entities",
-                href: "/entities/#companies",
-              },
-            ],
-          },
-          {
-            title: "Support",
-            items: [
-              {
-                label: "Brand Assets",
-                to: "/brand-assets",
-              },
-              {
-                label: "Contact",
-                to: "/contact",
-              },
-            ],
-          },
-          {
-            title: "Legal",
-            items: [
-              {
-                label: "Terms",
-                href: "https://cardanofoundation.org/en/terms-and-conditions",
-              },
-              {
-                label: "Privacy Policy",
-                href: "https://cardanofoundation.org/en/privacy",
-              },
-              /* TODO: once we have these files, link locally not to the cf page 
-              {
-                label: 'Terms',
-                to: '/terms-and-conditions',
-              },
-              {
-                label: 'Privacy Policy',
-                to: '/privacy-policy',
-              },
-              {
-                label: 'Cookie Policy',
-                to: '/cookie-policy',
-              },
-              */
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Cardano News",
-                to: "/news",
-              },
-              {
-                label: "Contribute",
-                to: "/docs/",
-              },
-              {
-                label: "Contributors",
-                href: "https://github.com/cardano-foundation/cardano-org/graphs/contributors",
-              },
-            ],
-          },
-        ],
-        copyright: `® B45`,
-      },
+      // footer: {
+      //   style: "dark",
+      //   links: [
+      //     /* we may want to hide this, and link it only via localhost link in the read me */
+      //     /*
+      //     {
+      //       title: 'Docs',
+      //       items: [
+      //         {
+      //           label: 'Tutorial',
+      //           to: '/docs/intro',
+      //         },
+      //       ],
+      //     },
+      //     */
+      //     {
+      //       title: "Entities",
+      //       items: [
+      //         {
+      //           label: "Cardano Foundation",
+      //           to: "/entities?tab=cardanofoundation",
+      //         },
+      //         {
+      //           label: "EMURGO",
+      //           to: "/entities?tab=emurgo",
+      //         },
+      //         {
+      //           label: "Input Output",
+      //           href: "/entities?tab=iog",
+      //         },
+      //         {
+      //           label: "Intersect",
+      //           href: "/entities?tab=intersect",
+      //         },
+      //         {
+      //           label: "PRAGMA",
+      //           href: "/entities?tab=pragma",
+      //         },
+      //         {
+      //           label: "More entities",
+      //           href: "/entities/#companies",
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       title: "Support",
+      //       items: [
+      //         {
+      //           label: "Brand Assets",
+      //           to: "/brand-assets",
+      //         },
+      //         {
+      //           label: "Contact",
+      //           to: "/contact",
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       title: "Legal",
+      //       items: [
+      //         {
+      //           label: "Terms",
+      //           href: "https://cardanofoundation.org/en/terms-and-conditions",
+      //         },
+      //         {
+      //           label: "Privacy Policy",
+      //           href: "https://cardanofoundation.org/en/privacy",
+      //         },
+      //         /* TODO: once we have these files, link locally not to the cf page 
+      //         {
+      //           label: 'Terms',
+      //           to: '/terms-and-conditions',
+      //         },
+      //         {
+      //           label: 'Privacy Policy',
+      //           to: '/privacy-policy',
+      //         },
+      //         {
+      //           label: 'Cookie Policy',
+      //           to: '/cookie-policy',
+      //         },
+      //         */
+      //       ],
+      //     },
+      //     {
+      //       title: "More",
+      //       items: [
+      //         {
+      //           label: "Cardano News",
+      //           to: "/news",
+      //         },
+      //         {
+      //           label: "Contribute",
+      //           to: "/docs/",
+      //         },
+      //         {
+      //           label: "Contributors",
+      //           href: "https://github.com/cardano-foundation/cardano-org/graphs/contributors",
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   copyright: `® B45`,
+      // },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,

@@ -23,6 +23,7 @@ export default function FeaturedTitleWithText({
       <div className="row">
         <div className={clsx("col col--6", styles.leftColumn)}>
           <h1 className={clsx({ headingDot: headingDot })}>{title}</h1>
+          <img src={"/img/web3.jpg"} />
         </div>
         <div className={clsx("col col--6", styles.rightColumn)}>
           {Array.isArray(description) ? (

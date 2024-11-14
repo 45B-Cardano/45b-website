@@ -43,6 +43,10 @@ export default function ImageWithText({
           ) : (
             <p>{parseMarkdownLikeText(text)}</p>
           )}
+                      <Link className="button button--primary button--lg" to="https://airtable.com/appDlq4qQX7VBkGJx/pagK0lbmxLlkoexth/form">
+              Apply to join
+            </Link>
+
         </div>
       </div>
     </>
