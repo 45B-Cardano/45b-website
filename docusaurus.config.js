@@ -150,6 +150,11 @@ const config = {
               { to: "/enterprise#healthcare", label: "Health Care" },
             ],
           },
+          {
+            label: "About",
+            position: "left",
+            items: [{ to: "/team", label: "Team" }],
+          },
           /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
@@ -248,7 +253,7 @@ const config = {
       //           label: "Privacy Policy",
       //           href: "https://cardanofoundation.org/en/privacy",
       //         },
-      //         /* TODO: once we have these files, link locally not to the cf page 
+      //         /* TODO: once we have these files, link locally not to the cf page
       //         {
       //           label: 'Terms',
       //           to: '/terms-and-conditions',
