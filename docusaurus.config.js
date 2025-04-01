@@ -150,11 +150,11 @@ const config = {
               { to: "/enterprise#healthcare", label: "Health Care" },
             ],
           },
-          {
-            label: "About",
-            position: "left",
-            items: [{ to: "/team", label: "Team" }],
-          },
+          // {
+          //   label: "About",
+          //   position: "left",
+          //   items: [{ to: "/team", label: "Team" }],
+          // },
           /* we may want to hide this, and link it only via localhost link in the read me */
           /*
           {
@@ -178,11 +178,11 @@ const config = {
           //     { to: "/news/tags", label: "View Tags" },
           //   ],
           // },
-          {
-            href: `${vars.repository}`,
-            position: "right",
-            className: "header-github-link",
-          },
+          // {
+          //   href: `${vars.repository}`,
+          //   position: "right",
+          //   className: "header-github-link",
+          // },
         ],
       },
       // footer: {

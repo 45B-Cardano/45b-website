@@ -4,32 +4,41 @@ import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import {
   FaXTwitter,
-  FaRedditAlien,
-  FaDiscourse,
   FaFacebookF,
-  FaMeetup,
   FaTelegram,
-  FaStackExchange,
   FaLinkedin,
+  FaYoutube,
+  FaDiscord,
+  FaInstagram,
 } from "react-icons/fa6";
 
 // Overview: https://react-icons.github.io/react-icons/, for consistency stick to font awesome 6 (fa6)
 const socialLinks = [
   {
+    icon: <FaYoutube />,
+    url: "https://www.youtube.com/@45B-CardanoEnablement",
+    label: "Cardano 45B on Youtube",
+  },
+  {
     icon: <FaXTwitter />,
     url: "https://x.com/45B_Cardano",
     label: "45B on X",
   },
-  // {
-  //   icon: <FaRedditAlien />,
-  //   url: "https://www.reddit.com/r/cardano/",
-  //   label: "45B on Reddit",
-  // },
-  // {
-  //   icon: <FaDiscourse />,
-  //   url: "https://forum.cardano.org",
-  //   label: "Cardano Forum",
-  // },
+  {
+    icon: <FaTelegram />,
+    url: "https://t.me/+5meQRfEh6k8wYmFk",
+    label: "45B on Telegram",
+  },
+  {
+    icon: <FaDiscord />,
+    url: "https://discord.gg/nXZJ24qaRZ",
+    label: "45B on Discord",
+  },
+  {
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/45b_io",
+    label: "45B on Instagram",
+  },
   // {
   //   icon: <FaFacebookF />,
   //   url: "https://www.facebook.com/groups/CardanoCommunity",
@@ -39,16 +48,6 @@ const socialLinks = [
   //   icon: <FaMeetup />,
   //   url: "https://www.meetup.com/pro/cardano/",
   //   label: "Cardano Meetup",
-  // },
-  {
-    icon: <FaTelegram />,
-    url: "https://t.me/+5meQRfEh6k8wYmFk",
-    label: "45B on Telegram",
-  },
-  // {
-  //   icon: <FaStackExchange />,
-  //   url: "https://cardano.stackexchange.com/",
-  //   label: "Cardano StackExchange",
   // },
   {
     icon: <FaLinkedin />,

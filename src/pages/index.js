@@ -11,6 +11,8 @@ import HomeDiscoverSection from "@site/src/components/HomeDiscoverSection";
 import Logos from "@site/src/components/Layout/Logos";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
 import BoundaryBox from "@site/src/components/Layout/BoundaryBox";
+import TeamGrid from "@site/src/components/TeamGrid";
+import teamMembers from "@site/src/data/teamMembers.json";
 
 function HomepageHeader() {
   const { siteTitle } = "useDocusaurusContext()";
@@ -48,6 +50,8 @@ export default function Home() {
               buttonLink="/web3"
               headingDot={false}
             />
+            <Divider text="Meet our team" id="team" white={false} />
+            <TeamGrid teamMembers={teamMembers} />
           </BoundaryBox>
         </BackgroundWrapper>
 
