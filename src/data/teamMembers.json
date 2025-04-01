@@ -1,38 +1,86 @@
 [
   {
-    "name": "Pedro Lucas",
-    "role": "Web3 Technical Product Manager",
-    "photo": "img/team/profile-default.svg",
-    "whatsapp": "918920810",
-    "linkedIn": "https://www.linkedin.com/in/pedrohlucas/",
-    "twitter": "https://www.linkedin.com/in/pedrohlucas/",
-    "telegram": "http://t.me/lucas45b",
-    "discord": "skywalker.45b"
+  "name": "Pedro Lucas",
+  "role": "Web3 Technical Product Manager",
+  "photo": "img/team/LUCAS.jpg",
+  "linkedIn": "https://www.linkedin.com/in/pedrohlucas/",
+  "twitter": "https://twitter.com/pedrolucasnet",
+  "telegram": "https://t.me/lucas45b"
   },
   {
-    "name": "Pedro Lucas",
-    "role": "Web3 Technical Product Manager",
-    "photo": "img/team/profile-default.svg",
-    "linkedIn": "https://www.linkedin.com/in/pedrohlucas/",
-    "twitter": "https://www.linkedin.com/in/pedrohlucas/",
-    "telegram": "http://t.me/lucas45b"
+  "name": "Roberto Mayan",
+  "role": "Product Manager",
+  "photo": "img/team/ROBERTO.png",
+  "linkedIn": "https://www.linkedin.com/in/roberto-mayen-hess/",
+  "twitter": "https://x.com/micochango",
+  "telegram": "@mayanhavoc"
   },
   {
-    "name": "Pedro Lucas",
-    "role": "Web3 Technical Product Manager",
-    "photo": "img/team/profile-default.svg",
-    "whatsapp": "918920810",
-    "telegram": "http://t.me/lucas45b",
-    "discord": "skywalker.45b"
+  "name": "Anselmo Godinho",
+  "role": "Video capture/editing",
+  "photo": "img/team/ANSELMO.jpg",
+  "linkedIn": "https://www.linkedin.com/in/theultimateswissarmyknife/"
   },
   {
-    "name": "Pedro Lucas",
-    "role": "Web3 Technical Product Manager",
-    "photo": "img/team/profile-default.svg",
-    "whatsapp": "918920810",
-    "linkedIn": "https://www.linkedin.com/in/pedrohlucas/",
-    "twitter": "https://www.linkedin.com/in/pedrohlucas/",
-    "telegram": "http://t.me/lucas45b",
-    "discord": "skywalker.45b"
+  "name": "Liliana Nuno",
+  "role": "Digital/Web Designer; Community",
+  "photo": "img/team/LILIANA.jpg",
+  "linkedIn": "https://www.linkedin.com/in/liliananunoo/",
+  "twitter": "https://x.com/lissenpai_",
+  "telegram": "@liliananuno"
+  },
+  {
+  "name": "Marco Martins",
+  "role": "Front/Backend Dev; Cardano SPO",
+  "photo": "img/team/MARCO.jpg",
+  "linkedIn": "https://www.linkedin.com/in/marcopmartins/",
+  "twitter": "https://x.com/MarkoMartins"
+  },
+  {
+  "name": "Rafael Cardoso",
+  "role": "Business Development",
+  "photo": "img/team/RAFAEL.jpg",
+  "linkedIn": "-",
+  "twitter": "https://x.com/DecenNation"
+  },
+  {
+  "name": "Nuno Eusébio",
+  "role": "UX Designer",
+  "photo": "img/team/NUNO.jpg",
+  "linkedIn": "https://www.linkedin.com/in/nunoeusebio/",
+  "telegram": "@nuno_eusebio"
+  },
+  {
+  "name": "Beatriz Triguinho",
+  "role": "Graphic and Product Design",
+  "photo": "img/team/TRIGUINHO.jpg",
+  "linkedIn": "https://www.linkedin.com/in/beatriz-triguinho-946881266/",
+  "telegram": "@beatriz_triguinho"
+  },
+  {
+  "name": "Paulo Martins",
+  "role": "UX/UI & Visual Design",
+  "photo": "img/team/PAULO.jpg",
+  "linkedIn": "https://www.linkedin.com/in/arapuk",
+  "telegram": "@Pulsidae"
+  },
+  {
+  "name": "Tânia Galrão",
+  "role": "Designer and Tattoo Community",
+  "photo": "img/team/TANIA.jpg",
+  "linkedIn": "https://www.linkedin.com/in/taniagalrao/"
+  },
+  {
+  "name": "Ana Durão",
+  "role": "Social Sciences and Community",
+  "photo": "img/team/ANA.jpg",
+  "linkedIn": "https://www.linkedin.com/in/ana-dur%C3%A3o-16a03855/",
+  "telegram": "https://t.me/ana_durao"
+  },
+  {
+  "name": "Mónica Fragoso",
+  "role": "Global Community",
+  "photo": "img/team/MONICA.jpg",
+  "linkedIn": "https://www.linkedin.com/in/m%C3%B3nica-fragoso-b3972713b/"
   }
 ]
