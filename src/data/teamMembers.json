@@ -5,7 +5,9 @@
   "photo": "img/team/LUCAS.jpg",
   "linkedIn": "https://www.linkedin.com/in/pedrohlucas/",
   "twitter": "https://twitter.com/pedrolucasnet",
-  "telegram": "https://t.me/lucas45b"
+  "telegram": "https://t.me/lucas45b",
+  "discord": "skywalker.45b",
+  "link": "https://pedrolucas.net"
   },
   {
   "name": "Roberto Mayan",
@@ -13,6 +15,7 @@
   "photo": "img/team/ROBERTO.png",
   "linkedIn": "https://www.linkedin.com/in/robertomh/",
   "twitter": "https://x.com/micochango",
+  "discord": "mayanhavoc",
   "telegram": "https://t.me/mayanhavoc"
   },
   {
@@ -27,6 +30,7 @@
   "photo": "img/team/LILIANA.jpg",
   "linkedIn": "https://www.linkedin.com/in/liliananunoo/",
   "twitter": "https://x.com/lissenpai_",
+  "discord": "lissenpai",
   "telegram": "https://t.me/liliananuno"
   },
   {
@@ -61,6 +65,7 @@
   "role": "UX/UI & Visual Design",
   "photo": "img/team/PAULO.jpg",
   "linkedIn": "https://www.linkedin.com/in/arapuk",
+  "discord": "Arapuk",
   "telegram": "https://t.me/Pulsidae"
   },
   {

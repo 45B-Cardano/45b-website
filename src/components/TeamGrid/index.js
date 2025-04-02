@@ -1,5 +1,7 @@
 import {
   BsDiscord,
+  BsLink,
+  BsLink45Deg,
   BsLinkedin,
   BsTelegram,
   BsTwitter,
@@ -30,19 +32,24 @@ const TeamGrid = ({ teamMembers = [] }) => {
                   <BsLinkedin />
                 </a>
               )}
-              {member.telegram && (
-                <a href={member.telegram} target="_blank">
-                  <BsTelegram />
-                </a>
-              )}
               {member.twitter && (
                 <a href={member.twitter} target="_blank">
                   <BsTwitter />
                 </a>
               )}
               {member.discord && (
-                <a href={`discordapp://${member.discord}`} target="_blank">
+                <a href={`https://discord.com/users/${member.discord}`} target="_blank">
                   <BsDiscord />
+                </a>
+              )}
+              {member.telegram && (
+                <a href={member.telegram} target="_blank">
+                  <BsTelegram />
+                </a>
+              )}
+              {member.link && (
+                <a href={member.link} target="_blank">
+                  <BsLink45Deg />
                 </a>
               )}
             </div>
