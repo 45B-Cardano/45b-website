@@ -16,7 +16,7 @@ import {
 const socialLinks = [
   {
     icon: <FaYoutube />,
-    url: "https://www.youtube.com/@45B-CardanoEnablement",
+    url: "https://www.youtube.com/@45B-CardanoEnablement/videos",
     label: "Cardano 45B on Youtube",
   },
   {
