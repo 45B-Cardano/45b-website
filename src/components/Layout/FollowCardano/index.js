@@ -4,56 +4,55 @@ import styles from "./styles.module.css";
 import Link from "@docusaurus/Link";
 import {
   FaXTwitter,
-  FaRedditAlien,
-  FaDiscourse,
   FaFacebookF,
-  FaMeetup,
   FaTelegram,
-  FaStackExchange,
   FaLinkedin,
+  FaYoutube,
+  FaDiscord,
+  FaInstagram,
 } from "react-icons/fa6";
 
 // Overview: https://react-icons.github.io/react-icons/, for consistency stick to font awesome 6 (fa6)
 const socialLinks = [
   {
+    icon: <FaYoutube />,
+    url: "https://www.youtube.com/@45B-CardanoEnablement/videos",
+    label: "Cardano 45B on Youtube",
+  },
+  {
     icon: <FaXTwitter />,
-    url: "https://twitter.com/Cardano",
-    label: "Cardano on X",
-  },
-  {
-    icon: <FaRedditAlien />,
-    url: "https://www.reddit.com/r/cardano/",
-    label: "Cardano on Reddit",
-  },
-  {
-    icon: <FaDiscourse />,
-    url: "https://forum.cardano.org",
-    label: "Cardano Forum",
-  },
-  {
-    icon: <FaFacebookF />,
-    url: "https://www.facebook.com/groups/CardanoCommunity",
-    label: "Cardano on Facebook",
-  },
-  {
-    icon: <FaMeetup />,
-    url: "https://www.meetup.com/pro/cardano/",
-    label: "Cardano Meetup",
+    url: "https://x.com/45B_Cardano",
+    label: "45B on X",
   },
   {
     icon: <FaTelegram />,
-    url: "https://t.me/Cardano",
-    label: "Cardano on Telegram",
+    url: "https://t.me/+5meQRfEh6k8wYmFk",
+    label: "45B on Telegram",
   },
   {
-    icon: <FaStackExchange />,
-    url: "https://cardano.stackexchange.com/",
-    label: "Cardano StackExchange",
+    icon: <FaDiscord />,
+    url: "https://discord.gg/nXZJ24qaRZ",
+    label: "45B on Discord",
   },
+  {
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/45b_io",
+    label: "45B on Instagram",
+  },
+  // {
+  //   icon: <FaFacebookF />,
+  //   url: "https://www.facebook.com/groups/CardanoCommunity",
+  //   label: "45B on Facebook",
+  // },
+  // {
+  //   icon: <FaMeetup />,
+  //   url: "https://www.meetup.com/pro/cardano/",
+  //   label: "Cardano Meetup",
+  // },
   {
     icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/company/cardano-community",
-    label: "Cardano on LinkedIn",
+    url: "https://www.linkedin.com/company/45b-cardano-enablement",
+    label: "45B on LinkedIn",
   },
 ];
 

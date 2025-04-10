@@ -1,0 +1,61 @@
+.teamGrid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin-top: 2em;
+}
+
+.teamMember {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.teamMember img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.teamMember h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.teamMember p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.socialLinks a {
+  display: inline-block;
+  margin: 0 8px;
+  text-decoration: none;
+  color: #0077b5; /* Adjust color for style */
+  font-size: 1.2rem;
+}
+
+.socialLinks a:hover {
+  color: #0056b3; /* Adjust hover color */
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .teamGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}

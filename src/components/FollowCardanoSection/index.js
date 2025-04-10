@@ -10,10 +10,10 @@ export default function FollowCardanoSection() {
   return (
     <BackgroundWrapper backgroundType={"gradientLight"}>
       <BoundaryBox>
-        <Divider text="Social" id="follow" white={true} />
+        <Divider text="Socials" id="follow" white={true} />
         <div className={styles.container}>
           <FollowCardano
-            title="Get Involved"
+            title="Get in touch with us!"
             iconForegroundColor="#0136AE"
             iconBackgroundColor="#ffffff"
           />
