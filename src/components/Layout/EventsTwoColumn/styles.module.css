@@ -1,0 +1,47 @@
+.boxWrap {
+  width: 100%;
+  padding-top: 0rem;
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.leftColumn {
+  display: flex; /* Establish flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically within the container */
+  align-items: left; /* Center children horizontally */
+}
+
+.rightColumn {
+  display: flex; /* Establish flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center children vertically within the container */
+  align-items: left; /* Center children horizontally */
+}
+
+/* white style cta button */
+
+.buttonWhite {
+  margin-top: 1rem;
+  background-color: #fdfdfb;
+  color: #1c1e21;
+  border: none;
+  font-weight: normal;
+  max-width: fit-content;
+}
+
+.buttonWhite:hover,
+buttonWhite:focus {
+  background-color: #cbcbc9;
+  color: #1c1e21;
+  border: none;
+  font-weight: normal;
+}
+
+.align-button-center {
+  margin: 0 auto; /* Center the button within its flex container */
+  display: flex; /* If not already flex */
+  justify-content: center; /* Center horizontally */
+}

@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   gap: 30px; /* Adjust the space between the image and the text */
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .imageWrap {

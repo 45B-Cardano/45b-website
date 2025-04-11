@@ -41,12 +41,6 @@
   "twitter": "https://x.com/MarkoMartins"
   },
   {
-  "name": "Rafael Cardoso",
-  "role": "Business Development",
-  "photo": "img/team/RAFAEL.jpg",
-  "twitter": "https://x.com/DecenNation"
-  },
-  {
   "name": "Nuno Eusébio",
   "role": "UX Designer",
   "photo": "img/team/NUNO.jpg",
@@ -86,5 +80,11 @@
   "role": "Global Community",
   "photo": "img/team/MONICA.jpg",
   "linkedIn": "https://www.linkedin.com/in/m%C3%B3nica-fragoso-b3972713b/"
+  },
+  {
+    "name": "You!?",
+    "role": "We are looking for a number of different profiles. Get in touch if you like what we're doing! 👇",
+    "photo": "img/team/profile-default.svg",
+    "telegram": "https://t.me/lucas45b"
   }
 ]

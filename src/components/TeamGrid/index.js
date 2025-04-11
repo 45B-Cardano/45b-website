@@ -8,6 +8,7 @@ import {
   BsWhatsapp,
 } from "react-icons/bs";
 import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
 
 const TeamGrid = ({ teamMembers = [] }) => {
   return (
@@ -56,6 +57,9 @@ const TeamGrid = ({ teamMembers = [] }) => {
           </div>
         </div>
       ))}
+                                  <Link className="button button--primary button--lg" to="https://miro.com/app/board/uXjVMGizkdo=/?share_link_id=203438424168">
+                          More about 45B
+                        </Link>
     </div>
   );
 };
