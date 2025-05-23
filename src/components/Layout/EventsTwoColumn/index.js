@@ -23,7 +23,6 @@ export default function EventsTwoColumn({
   rightHeadingDot,
   rightButtonAlign, // 'center' for centering the button, undefined or any other value keeps default alignment
 }) {
-
   const renderText = (text) => {
     // Check if text is an array
     if (Array.isArray(text)) {
@@ -39,20 +38,32 @@ export default function EventsTwoColumn({
   const hasRightContent = rightTitle || rightText;
 
   // Inline style for centering button
-  const centerButtonStyle = { margin: '0 auto', display: 'block' };
+  const centerButtonStyle = { margin: "0 auto", display: "block" };
 
   return (
     <div className={styles.boxWrap}>
       <div className={clsx("row", styles.row)}>
         {/* Adjust the col class based on whether the right column has content */}
-        <div className={clsx("col", hasRightContent ? "col--6" : "col--7", styles.leftColumn)}>
+        <div
+          className={clsx(
+            "col",
+            hasRightContent ? "col--6" : "col--7",
+            styles.leftColumn
+          )}
+        >
           {leftTitle && (
             <h1 className={clsx({ headingDot: leftHeadingDot })}>
               {leftTitle}
             </h1>
           )}
           {leftText && renderText(leftText)}
-          <iframe width="560" height="315" src={leftYTLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe
+            height="315"
+            src={leftYTLink}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+          />
           {leftButtonLabel && (
             <Link
               className={clsx(
@@ -66,15 +77,28 @@ export default function EventsTwoColumn({
             </Link>
           )}
         </div>
-       {/* Adjust the col class based on whether the right column has content */}
-       <div className={clsx("col", hasRightContent ? "col--6" : "col--5", styles.leftColumn)}>
+        {/* Adjust the col class based on whether the right column has content */}
+        <div
+          className={clsx(
+            "col",
+            hasRightContent ? "col--6" : "col--5",
+            styles.leftColumn
+          )}
+        >
           {rightTitle && (
             <h1 className={clsx({ headingDot: rightHeadingDot })}>
               {rightTitle}
             </h1>
           )}
           {rightText && renderText(rightText)}
-          <iframe width="560" height="315" src={rightYTLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe
+            height="315"
+            src={rightYTLink}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            allowfullscreen
+          />
           {rightButtonLabel && (
             <Link
               className={clsx(
