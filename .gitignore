@@ -40,3 +40,10 @@ yarn.lock
 
 # Temporary files that sometimes get checked in by accident
 .yarn/**
+
+# Lucas's inbox for content destined for the site — not part of the site
+# itself, just a handoff staging area (see notes/45b-org.md in the Web3 repo)
+/INBOX
+
+# Temporary snapshots pulled from the live host for comparison — not repo content
+/.live-web3-snapshot
