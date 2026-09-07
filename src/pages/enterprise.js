@@ -21,8 +21,8 @@ export default function Home() {
 
   return (
     <Layout
-    title="Use cases for enterprise | cardano.org"
-    description="An open platform designed to empower billions without economic identity by offering decentralized applications for managing identity, value, and governance."
+    title="Use cases for enterprise | 45B.io"
+    description="How Cardano is being used across identity, finance, supply chain, social impact, data, and emerging applications — fifteen use cases and where to read more."
     >
       <OpenGraphImage pageName="use-cases-for-enterprise" />
       <HomepageHeader />

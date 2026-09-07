@@ -82,6 +82,12 @@ const config = {
     ({
       // The project's social card
       image: "img/og/default.jpg",
+      // The site is designed dark-first, so open in dark mode for everyone and
+      // ignore the OS preference; the navbar toggle still lets visitors switch.
+      colorMode: {
+        defaultMode: "dark",
+        respectPrefersColorScheme: false,
+      },
       navbar: {
         logo: {
           alt: "45B Logo",

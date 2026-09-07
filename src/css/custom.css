@@ -436,3 +436,21 @@ img {
   }
 }
 
+
+/* Primary buttons sitting on light panels/imagery need a deeper blue in dark
+   mode: the dark-theme --ifm-color-primary (#6684ce) is washed out there.
+   Opt-in class rather than a blanket .button--primary override, so links and
+   other primary buttons keep the lighter blue they need for contrast against
+   the dark page background. */
+[data-theme="dark"] .button--primary.button-dark-tint {
+  background-color: #2f4a94;
+  border-color: #2f4a94;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .button--primary.button-dark-tint:hover,
+[data-theme="dark"] .button--primary.button-dark-tint:focus {
+  background-color: #263d7c;
+  border-color: #263d7c;
+  color: #ffffff;
+}

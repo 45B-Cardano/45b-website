@@ -12,8 +12,9 @@ import Link from "@docusaurus/Link";
 
 const TeamGrid = ({ teamMembers = [] }) => {
   return (
-    <div className={styles.teamGrid}>
-      {teamMembers.map((member) => (
+    <>
+      <div className={styles.teamGrid}>
+        {teamMembers.map((member) => (
         <div className={styles.teamMember}>
           <img src={member.photo} alt="Team Member 1" />
           <h3>{member.name}</h3>
@@ -57,10 +58,18 @@ const TeamGrid = ({ teamMembers = [] }) => {
           </div>
         </div>
       ))}
-                                  <Link className="button button--primary button--lg" to="https://miro.com/app/board/uXjVMGizkdo=/?share_link_id=203438424168">
-                          More about 45B
-                        </Link>
-    </div>
+      </div>
+      {/* Outside .teamGrid: as a child of the grid it was laid out as another
+          grid cell rather than centered under the whole grid. */}
+      <div className={styles.buttonRow}>
+        <Link
+          className="button button--primary button--lg button-dark-tint"
+          to="https://miro.com/app/board/uXjVMGizkdo=/?share_link_id=203438424168"
+        >
+          More about 45B
+        </Link>
+      </div>
+    </>
   );
 };
 

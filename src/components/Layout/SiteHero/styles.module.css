@@ -252,6 +252,8 @@ html[data-theme="dark"] .heroBannerWaves {
   z-index: -1; /* Ensure the gradient is behind the content */
 }
 
+/* See the dark-mode hero text block at the end of this file. */
+
 /** heroBannerBraidBlue **/
 
 .heroBannerBraidBlue {
@@ -486,3 +488,30 @@ html[data-theme="dark"] .heroBannerBraidBlack::before {
   }
 }
 
+
+/* ---- Dark-mode hero text -------------------------------------------------
+   Infima's `hero--primary` derives its text colour from
+   --ifm-font-color-base-inverse, which flips to dark in dark mode. Every
+   banner below keeps the same dark background (gradient, blue fill, or photo)
+   in both themes, so their title and subtitle must stay white rather than
+   following the theme.
+
+   `.heroBannerZoomRedWhite` is deliberately NOT in this list: it is the one
+   light-background banner (#ccd6ee with a blue title and a #1d1e21 subtitle),
+   where dark text is correct. */
+html[data-theme="dark"] .heroBannerZoom,
+html[data-theme="dark"] .heroBannerZoomRedWhiteDark,
+html[data-theme="dark"] .heroBannerZoomBlueRed,
+html[data-theme="dark"] .heroBannerAda,
+html[data-theme="dark"] .heroBannerDots,
+html[data-theme="dark"] .heroBannerFluid,
+html[data-theme="dark"] .heroBannerOverlap,
+html[data-theme="dark"] .heroBannerWaves,
+html[data-theme="dark"] .heroBannerStarburst,
+html[data-theme="dark"] .heroBannerBraidBlue,
+html[data-theme="dark"] .heroBannerBraidRedBlue,
+html[data-theme="dark"] .heroBannerBraidBlack,
+html[data-theme="dark"] .heroBannerOuroboros {
+  --ifm-hero-text-color: #ffffff;
+  color: #ffffff;
+}

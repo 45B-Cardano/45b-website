@@ -59,6 +59,60 @@ html[data-theme="dark"] .iconWrapper {
   z-index: 1;
 }
 
+.iconMenuWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.popover {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 6px;
+  white-space: nowrap;
+  background-color: #ffffff;
+  color: #1c1c1c;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.popover::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #ffffff;
+}
+
+.popoverItem {
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #1c1c1c !important;
+  text-decoration: none !important;
+  font-size: 0.85rem;
+}
+
+.popoverItem:hover {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff !important;
+}
+
 /* screen size changes */
 @media screen and (max-width: 966px) {
   .taglineContainer {

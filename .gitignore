@@ -47,3 +47,7 @@ yarn.lock
 
 # Temporary snapshots pulled from the live host for comparison — not repo content
 /.live-web3-snapshot
+
+# Copy of the last build actually deployed, kept so the next deploy can diff
+# against it and upload only changed files (see notes/45b-org.md)
+/.last-deploy

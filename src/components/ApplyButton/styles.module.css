@@ -1,0 +1,65 @@
+.applyRow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.applyButton {
+  position: relative;
+  overflow: hidden; /* keeps the shine clipped to the button */
+  padding: 1.1rem 3.2rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.applyLabel {
+  position: relative;
+  z-index: 1; /* label stays above the shine */
+}
+
+/* A narrow diagonal highlight that flies across the button, then waits out
+   the rest of the cycle before coming back. */
+.applyButton::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  left: 0;
+  width: 40%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-250%) skewX(-20deg);
+  animation: applyShine 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes applyShine {
+  0% {
+    transform: translateX(-250%) skewX(-20deg);
+  }
+  18% {
+    transform: translateX(350%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(350%) skewX(-20deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .applyButton::after {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .applyButton {
+    padding: 0.95rem 2.2rem;
+    font-size: 1.15rem;
+  }
+}

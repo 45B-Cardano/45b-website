@@ -19,6 +19,20 @@
   order: 2; /* By default, text comes after image */
 }
 
+/* Small label above the title, grouping use cases the way cardano.org does. */
+.category {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777778;
+  margin-bottom: 4px;
+}
+
+[data-theme="dark"] .category {
+  color: #a9a9ad;
+}
+
 .title {
   font-size: 24px;
   font-weight: bold;

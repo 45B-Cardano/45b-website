@@ -22,6 +22,9 @@
   font-size: 1.2rem;
   margin-bottom: 5px;
   margin-top: 5px;
+  /* The card keeps its light background in dark mode, so the name must not
+     inherit the light base font colour — it would go white on near-white. */
+  color: #1c1e21;
 }
 
 .teamMember p {
@@ -58,4 +61,10 @@
   .teamGrid {
     grid-template-columns: 1fr;
   }
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
 }

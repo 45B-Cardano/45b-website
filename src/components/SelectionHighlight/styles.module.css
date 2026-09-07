@@ -1,0 +1,18 @@
+/* Square edges and a tight fit, so it reads as selected text rather than as a
+   badge. box-decoration-break keeps the padding on every line the text wraps
+   onto instead of only the first and last. */
+
+/* Light mode: selection blue picked off screen. White text sits at 5.3:1 on it. */
+.selection {
+  background-color: #3367d1;
+  color: #ffffff;
+  padding: 0.1em 0.15em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Dark mode was never the problem, so it keeps the 45B accent. */
+html[data-theme="dark"] .selection {
+  background-color: #4455bb;
+  color: #ffffff;
+}

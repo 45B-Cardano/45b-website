@@ -33,16 +33,23 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"zoom"}>
           <BoundaryBox>
             <FeaturedTitleWithText
-              title="Web3 Workshops sign-ups open"
+              title="Web3 Workshops sign-ups closing soon"
+              titleAboveText
+              imageWidth="60%"
+              largeDescription
+              imageLink="/web3"
+              imageAlt="Web3 Workshops — sign-ups closing soon"
               description={[
-                "Web3 has been revolutionizing the business model of organizations. It is a silent revolution building up that will more and more be relevat. NOW is the time to learn and be ahead of the curve in incorporating it in your culture and products.",
+                "Web3 is rewriting how organizations own, move and prove value — payments that settle in seconds, records nobody can quietly alter, communities that fund and govern themselves. In 2026 it reaches your industry, ready or not.",
+
+                "The people who shape that shift won't all be engineers. No code required and no prior blockchain knowledge assumed — come and find out what it makes possible in your own field.",
               ]}
               quote={[
                 "Web3 is in your reach.",
                 <br key="line1" /> /* FIXME: too hacky */,
                 "Take hold!",
               ]}
-              buttonLabel="Know more"
+              buttonLabel="Know more and sign up!"
               buttonLink="/web3"
               headingDot={false}
             />

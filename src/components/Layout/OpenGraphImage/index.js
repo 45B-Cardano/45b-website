@@ -6,7 +6,10 @@ const OpenGraphImage = ({ pageName }) => {
   // open graph images needs to be in the "og" folder + .jpg
   // we currently do not distinguish between og:image and twitter:image
   
-  const imageUrl = `https://cardano.org/img/og/${pageName}.jpg`;
+  // Absolute URL on 45b.io: social scrapers do not resolve relative paths, and
+  // this used to point at cardano.org (a leftover from the fork), which served
+  // every one of 45B's social previews off someone else's domain.
+  const imageUrl = `https://45b.io/img/og/${pageName}.jpg`;
 
   return (
     <Head>

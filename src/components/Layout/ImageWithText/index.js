@@ -2,7 +2,6 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { parseMarkdownLikeText } from "@site/src/utils/textUtils";
 import Divider from "@site/src/components/Layout/Divider";
@@ -16,8 +15,10 @@ export default function ImageWithText({
   title,
   subtitle,
   text,
+  videoUrl,
   isImageRight,
   id,
+  children,
 }) {
   // Construct the image URL using the imageName prop, we may want to handle image load errors in the future
   const imageUrl = useBaseUrl(`/img/${imageName}`);
@@ -43,10 +44,18 @@ export default function ImageWithText({
           ) : (
             <p>{parseMarkdownLikeText(text)}</p>
           )}
-                      <Link className="button button--primary button--lg" to="https://airtable.com/appDlq4qQX7VBkGJx/pagK0lbmxLlkoexth/form">
-              Apply to join
-            </Link>
-
+          {children}
+          {videoUrl && (
+            <div className={styles.videoWrap}>
+              <iframe
+                src={videoUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                allowFullScreen
+              />
+            </div>
+          )}
         </div>
       </div>
     </>

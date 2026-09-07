@@ -53,6 +53,14 @@ html[data-theme="dark"] .heroBanner {
   background-image: url(/img/hero-header-welcome-fallback.jpg);
 }
 
+/* Infima's `hero--primary` derives its text colour from
+   --ifm-font-color-base-inverse, which flips to dark in dark mode. The banner
+   photo behind it is the same in both themes, so pin the text to white. */
+html[data-theme="dark"] .heroBanner {
+  --ifm-hero-text-color: #ffffff;
+  color: #ffffff;
+}
+
 /* screen size changes */
 
 @media screen and (max-width: 966px) {

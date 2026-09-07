@@ -1,0 +1,89 @@
+/* The panel's outline colour is the only thing that changes between variants,
+   so it is set once here and used by both the selector and the panel. */
+.light {
+  --language-panel-line: #4455bb; /* 45B accent, same family as ProfileChips */
+  --language-panel-active-text: #ffffff;
+  --language-panel-hover: rgba(68, 85, 187, 0.12);
+  --language-panel-fill: transparent; /* the page background shows through */
+}
+
+.dark {
+  --language-panel-line: #ffffff; /* legible on the dark gradient behind it */
+  --language-panel-active-text: #0136ae;
+  --language-panel-hover: rgba(255, 255, 255, 0.18);
+  --language-panel-fill: rgba(
+    0,
+    20,
+    70,
+    0.25
+  ); /* darkens the gradient slightly so white text stays legible */
+}
+
+.dark .panel {
+  color: #ffffff;
+}
+
+/* Selector: centered on the panel's top edge. Its bottom sits 3px into the
+   panel's border so the active tab merges into the panel outline. */
+.tabList {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto -3px;
+  position: relative;
+  z-index: 2;
+  border: 3px solid var(--language-panel-line);
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.tabButton {
+  padding: 0.7rem 2.2rem;
+  background-color: transparent;
+  color: var(--language-panel-line);
+  border: none;
+  cursor: pointer;
+  font-family: Chivo, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.tabButton + .tabButton {
+  border-left: 3px solid var(--language-panel-line);
+}
+
+.tabButton:hover {
+  background-color: var(--language-panel-hover);
+  color: var(--language-panel-line);
+}
+
+.tabButtonActive,
+.tabButtonActive:hover {
+  /* fills over the panel border below -> merged */
+  background-color: var(--language-panel-line);
+  color: var(--language-panel-active-text);
+}
+
+/* Panel: full width of the section's content area. */
+.panel {
+  position: relative;
+  width: 100%;
+  border: 3px solid var(--language-panel-line);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  background-color: var(--language-panel-fill);
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 2rem 1.25rem;
+  }
+
+  .tabButton {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

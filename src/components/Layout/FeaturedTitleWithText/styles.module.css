@@ -13,3 +13,53 @@
 .quote {
   margin-bottom: 40px;
 }
+/* Width is set inline via the `imageWidth` prop; this keeps the aspect ratio
+   when it is scaled down and centers it in the leftover column space. */
+.image {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* One step up from the default body copy, for teaser blocks that carry the
+   page's main pitch. */
+.largeDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* With `titleAboveText` the title leads the text column, so the image in the
+   other column has to start at the same y. The heading loses its large default
+   top margin and the image column picks up .rightColumn's padding-top, putting
+   both at the same offset from the top of the row. */
+.leadingTitle {
+  margin-top: 0;
+}
+
+.leftColumnAligned {
+  padding-top: 30px;
+}
+
+/* The image is a link when `imageLink` is set; `display: block` keeps the
+   anchor from adding inline-layout slack around it, and the hover lift is the
+   affordance that it is clickable. */
+.imageLink {
+  display: block;
+  transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.imageLink:hover,
+.imageLink:focus-visible {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageLink,
+  .imageLink:hover,
+  .imageLink:focus-visible {
+    transition: none;
+    transform: none;
+  }
+}
