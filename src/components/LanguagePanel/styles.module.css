@@ -28,6 +28,8 @@
 .tabList {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 100%;
   width: fit-content;
   margin: 0 auto -3px;
   position: relative;
@@ -49,6 +51,10 @@
   font-size: 1rem;
   line-height: 1.2;
   transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.tabLabelShort {
+  display: none;
 }
 
 .tabButton + .tabButton {
@@ -81,9 +87,28 @@
   .panel {
     padding: 2rem 1.25rem;
   }
+}
 
+/* Four tabs, so the full names stop fitting well before the panel does. */
+@media (max-width: 900px) {
   .tabButton {
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .tabLabelFull {
+    display: none;
+  }
+
+  .tabLabelShort {
+    display: inline;
+  }
+
+  .tabButton {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
   }
 }

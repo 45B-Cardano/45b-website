@@ -119,6 +119,20 @@
   opacity: 1;
 }
 
+/* Warning-coloured banner at the top of the dialog, used by the languages
+   with no live cohort (es, fr) to say the sign-up is for the Async + Q&A
+   format. The right padding keeps the text clear of the close button. */
+.dialogNotice {
+  margin: 0 0 1.25rem;
+  padding: 0.8rem 2.25rem 0.8rem 0.9rem;
+  border-left: 4px solid var(--ifm-color-warning, #e6a700);
+  border-radius: 6px;
+  background-color: rgba(230, 167, 0, 0.16);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
 .dialogTitle {
   margin-bottom: 0.75rem;
   font-size: 1.6rem;
@@ -135,6 +149,10 @@
 .cardGrid {
   display: flex;
   align-items: stretch;
+  /* the intro is optional, so the gap above the cards lives here — it
+     collapses with the intro's bottom margin when there is one, and still
+     clears the cards' overhanging step badges when there is not */
+  margin-top: 1.75rem;
   gap: 0.75rem;
 }
 
@@ -169,6 +187,14 @@
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
   line-height: 1.3;
+}
+
+/* Qualifies the card's title, e.g. which languages a call can be held in. */
+.cardTitleNote {
+  margin: -0.25rem 0 0.5rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.7;
 }
 
 .cardText {

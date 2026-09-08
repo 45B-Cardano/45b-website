@@ -16,6 +16,11 @@ import { APPLY_FORM_URL, BOOK_CALL_URL } from "@site/src/data/web3Links";
 //
 // `lang` picks the copy (the page owns the language — see LanguagePanel);
 // pass `label` to override the trigger button's label outright.
+//
+// `notice` is optional and only set on the languages that have no live cohort
+// of their own (es, fr): those sign-ups go to the Async + Q&A cohort, and this
+// is the last point before the form where we can say so. `intro` is optional
+// too, for the same reason — the live-cohort start date does not apply there.
 
 const CONTENT = {
   en: {
@@ -69,6 +74,60 @@ const CONTENT = {
     ],
     footNote:
       "A ordem é indiferente — o formulário inscreve-o, a chamada dá-lhe prioridade.",
+  },
+  es: {
+    triggerLabel: "¡Apúntate aquí!",
+    notice:
+      "En español solo está disponible el formato asíncrono: los recursos y la documentación a tu ritmo, más llamadas de Q&A. Los workshops en directo se imparten en inglés y en portugués.",
+    dialogTitle: "Dos formas de entrar — haz las dos",
+    joiner: "y",
+    closeLabel: "Cerrar",
+    cards: [
+      {
+        step: "1",
+        title: "Rellena el formulario de inscripción",
+        text: "Un par de minutos: quién eres, el campo en el que trabajas y qué te gustaría sacar de esta iniciativa.",
+        cta: "Abrir el formulario",
+        href: APPLY_FORM_URL,
+      },
+      {
+        step: "2",
+        title: "Reserva una llamada con Lucas",
+        titleNote: "En inglés o portugués",
+        text: "Una conversación corta e informal para registrar tu disponibilidad semanal para las llamadas de Q&A.",
+        cta: "Elegir un horario",
+        href: BOOK_CALL_URL,
+      },
+    ],
+    footNote:
+      "El orden da igual — el formulario te inscribe, la llamada fija los horarios de las Q&A.",
+  },
+  fr: {
+    triggerLabel: "Inscrivez-vous ici\u00a0!",
+    notice:
+      "En français, seul le format asynchrone est disponible\u00a0: les ressources et la documentation à votre rythme, plus des appels Q&R. Les workshops en direct sont animés en anglais et en portugais.",
+    dialogTitle: "Deux façons d'entrer — faites les deux",
+    joiner: "et",
+    closeLabel: "Fermer",
+    cards: [
+      {
+        step: "1",
+        title: "Remplissez le formulaire d'inscription",
+        text: "Deux minutes\u00a0: qui vous êtes, le domaine dans lequel vous travaillez et ce que vous aimeriez retirer de cette initiative.",
+        cta: "Ouvrir le formulaire",
+        href: APPLY_FORM_URL,
+      },
+      {
+        step: "2",
+        title: "Réservez un appel avec Lucas",
+        titleNote: "En anglais ou en portugais",
+        text: "Une conversation courte et informelle pour noter vos disponibilités hebdomadaires pour les appels Q&R.",
+        cta: "Trouver un créneau",
+        href: BOOK_CALL_URL,
+      },
+    ],
+    footNote:
+      "L'ordre n'a pas d'importance — le formulaire vous inscrit, l'appel fixe les horaires des Q&R.",
   },
 };
 
@@ -159,10 +218,19 @@ export default function ApplyButton({ lang = "en", label }) {
               &times;
             </button>
 
+            {content.notice && (
+              <p className={styles.dialogNotice} role="note">
+                {content.notice}
+              </p>
+            )}
+
             <h2 id="apply-dialog-title" className={styles.dialogTitle}>
               {content.dialogTitle}
             </h2>
-            <p className={styles.dialogIntro}>{content.intro}</p>
+
+            {content.intro && (
+              <p className={styles.dialogIntro}>{content.intro}</p>
+            )}
 
             <div className={styles.cardGrid}>
               {content.cards.map((card, index) => (
@@ -179,6 +247,9 @@ export default function ApplyButton({ lang = "en", label }) {
                       {card.step}
                     </span>
                     <h3 className={styles.cardTitle}>{card.title}</h3>
+                    {card.titleNote && (
+                      <p className={styles.cardTitleNote}>{card.titleNote}</p>
+                    )}
                     <p className={styles.cardText}>{card.text}</p>
                     <Link
                       className={clsx(

@@ -19,6 +19,9 @@ import Link from "@docusaurus/Link";
 // Overview copy per language. The language is owned by the page and shared by
 // every LanguagePanel on it, so the toggle on this section and the one on
 // ContentOutlineSection further down switch the whole page together.
+//
+// A language needs a key in all four places: here, in LanguagePanel's
+// `languages` list, in ContentOutlineSection and in ApplyButton.
 const overviewContent = {
   en: {
     title: "What is it? How can I use it? What could I build?",
@@ -103,6 +106,94 @@ const overviewContent = {
       "Recursos Humanos",
       "Energia",
       "Turismo e Hotelaria",
+    ],
+  },
+  es: {
+    title: "¿Qué es? ¿Cómo puedo usarlo? ¿Qué podría construir?",
+    paragraphs: [
+      "La Web3 está reescribiendo la forma en que las organizaciones poseen, mueven y demuestran valor. Pagos que se liquidan en segundos, registros que nadie puede alterar en silencio, comunidades que se financian y se gobiernan a sí mismas: dejaron de ser experimentos y ya son infraestructura en funcionamiento. En 2026 llega a tu sector, esté preparado o no.",
+
+      <>
+        <SelectionHighlight>
+          Quienes den forma a este cambio no serán solo ingenieros.
+        </SelectionHighlight>{" "}
+        Serán las personas que entendieron pronto lo que la tecnología hace
+        posible en su propio campo, y supieron explicárselo a todos los demás
+        en la sala.
+      </>,
+
+      "45B - Cardano Enablement cuenta con financiación para organizar 5 grupos de workshops en varios idiomas. No hace falta programar ni tener conocimientos previos de blockchain. Ven a experimentar, haz las preguntas difíciles y sal con ideas que puedas aplicar de verdad.",
+
+      "Si tu trabajo tiene que ver con propiedad, contratos, dinero, pertenencia o confianza, ya tiene que ver con la Web3. Trae tu campo:",
+    ],
+    profiles: [
+      "Usuarios",
+      "Programadores",
+      "Artistas y Músicos",
+      "Abogados",
+      "Contables",
+      "Profesores y Formadores",
+      "Salud",
+      "Agricultura y Agroalimentación",
+      "Logística y Cadena de Suministro",
+      "Inmobiliario",
+      "Banca y Seguros",
+      "Comercio y E-commerce",
+      "Sector Público",
+      "ONG y Asociaciones",
+      "Marketing y Comunicación",
+      "Diseñadores",
+      "Periodistas",
+      "Gaming y Deporte",
+      "Emprendedores",
+      "Recursos Humanos",
+      "Energía",
+      "Turismo y Hostelería",
+    ],
+  },
+  fr: {
+    title:
+      "Qu'est-ce que c'est\u00a0? Comment l'utiliser\u00a0? Que pourrais-je construire\u00a0?",
+    paragraphs: [
+      "La Web3 réécrit la façon dont les organisations détiennent, transfèrent et prouvent la valeur. Des paiements réglés en quelques secondes, des registres que personne ne peut modifier en silence, des communautés qui se financent et se gouvernent elles-mêmes\u00a0: ce ne sont plus des expériences, c'est une infrastructure qui fonctionne. En 2026, elle arrive dans votre secteur, qu'il y soit prêt ou non.",
+
+      <>
+        <SelectionHighlight>
+          Ceux qui façonneront ce changement ne seront pas tous des
+          ingénieurs.
+        </SelectionHighlight>{" "}
+        Ce seront les personnes qui ont compris tôt ce que la technologie rend
+        possible dans leur propre domaine, et qui ont su l'expliquer à tous les
+        autres dans la salle.
+      </>,
+
+      "45B - Cardano Enablement est financée pour animer 5 groupes de workshops en plusieurs langues. Aucun code requis, aucune connaissance préalable de la blockchain attendue. Venez expérimenter, poser les questions difficiles et repartir avec des idées réellement applicables.",
+
+      "Si votre travail touche à la propriété, aux contrats, à l'argent, à l'appartenance ou à la confiance, il touche déjà à la Web3. Apportez votre domaine\u00a0:",
+    ],
+    profiles: [
+      "Utilisateurs",
+      "Développeurs",
+      "Artistes et Musiciens",
+      "Avocats",
+      "Comptables",
+      "Enseignants et Formateurs",
+      "Santé",
+      "Agriculture et Agroalimentaire",
+      "Logistique et Chaîne d'Approvisionnement",
+      "Immobilier",
+      "Banque et Assurance",
+      "Commerce et E-commerce",
+      "Secteur Public",
+      "ONG et Associations",
+      "Marketing et Communication",
+      "Designers",
+      "Journalistes",
+      "Gaming et Sport",
+      "Entrepreneurs",
+      "Ressources Humaines",
+      "Énergie",
+      "Tourisme et Hôtellerie",
     ],
   },
 };

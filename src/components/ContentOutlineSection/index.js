@@ -11,8 +11,12 @@ import { BOOK_CALL_URL } from "@site/src/data/web3Links";
 // a full-width panel whose whole content depends on a language toggle sitting
 // on its top edge (see LanguagePanel, which draws both).
 //
-// Add a language by adding a key here and a { code, label } entry in
+// Add a language by adding a key here and a { code, label, short } entry in
 // LanguagePanel's `languages`.
+//
+// Spanish and French have no Instagram post and no schedule graphic of their
+// own yet, so they reuse the English ones — swap `instagramUrl` /
+// `scheduleImage` in as soon as localised versions exist.
 const outlineContent = {
   en: {
     // Public Instagram post; /embed renders it in an iframe without needing
@@ -81,6 +85,72 @@ const outlineContent = {
       "Chamadas extra de Q&A em horários diferentes",
     ],
     bookCallLabel: "Marcar uma chamada para conversar",
+  },
+  es: {
+    instagramUrl: "https://www.instagram.com/p/Dc9gBjRtCYC/embed",
+    headingLine1: "Contenido",
+    headingLine2: "del Programa",
+    items: [
+      "Tu primer monedero",
+      "Qué es Blockchain",
+      "Tokens y NFTs",
+      "Usar la Web3",
+      "Hacer funcionar la cadena",
+      "Gobernanza en Cardano",
+      "Financiación en Cardano",
+      "Web3 para todos los sectores",
+      "Deconstruir modelos de negocio",
+      "Jugar con Contratos Inteligentes",
+      "Brainstorming de ideas",
+      "Idear Soluciones",
+    ],
+    scheduleImage: "/img/web3/weeks-en.png",
+    scheduleAlt: "Calendario semana a semana de los Workshops Web3",
+    zoomHint: "Toca para ampliar",
+    formatHeading: "Formato",
+    formatItems: [
+      "Inicio el 9 de septiembre, onboarding hasta el 15",
+      "3 semanas (hasta que acabe la financiación)",
+      "3 sesiones opcionales/semana, en horarios distintos",
+      "45-60 min de workshop; hasta 30 min de preguntas",
+      "Portal con las grabaciones y notas de las sesiones",
+      "Formato completamente asíncrono disponible",
+      "Llamadas extra de Q&A en horarios distintos",
+    ],
+    bookCallLabel: "Reservar una llamada para hablarlo",
+  },
+  fr: {
+    instagramUrl: "https://www.instagram.com/p/Dc9gBjRtCYC/embed",
+    headingLine1: "Contenu",
+    headingLine2: "du Programme",
+    items: [
+      "Votre premier portefeuille",
+      "Qu'est-ce que la Blockchain",
+      "Tokens et NFTs",
+      "Utiliser la Web3",
+      "Faire tourner la chaîne",
+      "Gouvernance sur Cardano",
+      "Financement sur Cardano",
+      "La Web3 pour tous les secteurs",
+      "Déconstruire les modèles économiques",
+      "Manipuler les Contrats Intelligents",
+      "Brainstorming de vos idées",
+      "Imaginer des Solutions",
+    ],
+    scheduleImage: "/img/web3/weeks-en.png",
+    scheduleAlt: "Calendrier semaine par semaine des Workshops Web3",
+    zoomHint: "Touchez pour agrandir",
+    formatHeading: "Format",
+    formatItems: [
+      "Début le 9 septembre, onboarding jusqu'au 15",
+      "3 semaines (jusqu'\u00e0 la fin du financement)",
+      "3 sessions optionnelles/semaine, \u00e0 des horaires diff\u00e9rents",
+      "45-60 min d'atelier\u00a0; jusqu'\u00e0 30 min de questions",
+      "Portail avec les enregistrements et les notes des sessions",
+      "Format enti\u00e8rement asynchrone \u00e9galement disponible",
+      "Appels Q&R suppl\u00e9mentaires \u00e0 des horaires diff\u00e9rents",
+    ],
+    bookCallLabel: "R\u00e9server un appel pour en discuter",
   },
 };
 
