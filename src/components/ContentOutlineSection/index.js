@@ -4,8 +4,7 @@ import styles from "./styles.module.css";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Link from "@docusaurus/Link";
 import LanguagePanel from "@site/src/components/LanguagePanel";
-
-const BOOK_CALL_URL = "https://calendly.com/lucas-45b-ia9l/quickmeet";
+import { BOOK_CALL_URL } from "@site/src/data/web3Links";
 
 //
 // This component:

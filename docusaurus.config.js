@@ -13,6 +13,14 @@ import "dotenv/config";
 // GitHub Settings to setup repository and branch customFields
 const vars = require("./variables");
 
+// The only pages that are actually 45B's. This site is a hard fork of
+// cardano.org and still serves ~250 inherited pages that were never ours; the
+// sitemap below is restricted to these three so search engines are not pointed
+// at that ghost content. Nothing is removed from the site here — that cleanup
+// is deliberately deferred (see notes/45b-website.md). Add a path here when a
+// genuinely new 45B page ships.
+const SITEMAP_PAGES = new Set(["/", "/web3", "/enterprise"]);
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "45B - Cardano Enablement",
@@ -67,6 +75,18 @@ const config = {
         },
         theme: {
           customCss: "./src/css/custom.css",
+        },
+        sitemap: {
+          // Filter explicitly rather than with ignorePatterns globs: the glob
+          // forms that exclude everything-but-three either drop "/" as well or
+          // miss nested routes like /news/<post>.
+          createSitemapItems: async ({ defaultCreateSitemapItems, ...rest }) => {
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => {
+              const path = new URL(item.url).pathname.replace(/\/+$/, "");
+              return SITEMAP_PAGES.has(path === "" ? "/" : path);
+            });
+          },
         },
         // gtag: {
         //   // don't be evil

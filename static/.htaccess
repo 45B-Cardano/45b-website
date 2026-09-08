@@ -1,0 +1,20 @@
+<IfModule mod_headers.c>
+   Header set Access-Control-Allow-Origin "*"
+ </IfModule>
+
+# --- 45B, added 2026-09-08 -------------------------------------------------
+# Keep HTML uncached so returning visitors always see the current page. The
+# /web3 landing page is edited constantly through September 2026 and a cached
+# copy shows stale dates and stale calls-to-action.
+#
+# HTML only, deliberately: JS/CSS/images in this shared root are not all
+# content-hashed, so a long-cache rule here could freeze stale assets for the
+# unrelated content living alongside the 45b-website build. Our own bundles
+# are content-hashed and bust themselves.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>

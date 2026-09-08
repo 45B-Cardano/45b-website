@@ -51,3 +51,12 @@ yarn.lock
 # Copy of the last build actually deployed, kept so the next deploy can diff
 # against it and upload only changed files (see notes/45b-org.md)
 /.last-deploy
+
+# Read-only pull of the live 45b.io document root, taken 2026-09-08 to plan the
+# merge of host-only content (see notes/live-root-merge.md in the Web3 repo).
+# Working material, not site content.
+/.live-root-snapshot
+
+# One-off deploy helper + its file list, generated per deploy. Not site content.
+/deploy-web3.sh
+/deploy-list.txt
