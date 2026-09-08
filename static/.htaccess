@@ -3,9 +3,11 @@
  </IfModule>
 
 # --- 45B, added 2026-09-08 -------------------------------------------------
-# Keep HTML uncached so returning visitors always see the current page. The
-# /web3 landing page is edited constantly through September 2026 and a cached
-# copy shows stale dates and stale calls-to-action.
+# STANDING POLICY, not a temporary measure and not scoped to any date: 45B
+# pages are never cached client-side. Returning visitors must always see the
+# current page. First driven by the /web3 landing page, where a cached copy
+# showed stale dates and stale calls-to-action, but it applies to all 45B web
+# properties and tools. Do not remove without asking Lucas.
 #
 # HTML only, deliberately: JS/CSS/images in this shared root are not all
 # content-hashed, so a long-cache rule here could freeze stale assets for the
