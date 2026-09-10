@@ -515,3 +515,17 @@ html[data-theme="dark"] .heroBannerOuroboros {
   --ifm-hero-text-color: #ffffff;
   color: #ffffff;
 }
+
+
+/* ---- Hero title accent ---------------------------------------------------
+   A short, timely add-on inside the <h1> (a closing date, say). Amber against
+   the blue hero gradient sits at ~4:1 on the lighter end of it — over the 3:1
+   large-text threshold — and every gradient banner keeps the same background
+   in dark mode, so one colour covers both themes.
+
+   inline-block keeps it as one unit: it drops to its own line when the title
+   fills the row, instead of splitting off a word or two of the accent. */
+.titleAccent {
+  display: inline-block;
+  color: #ffc857;
+}

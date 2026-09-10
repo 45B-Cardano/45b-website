@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import ImageWithText from "@site/src/components/Layout/ImageWithText";
@@ -12,9 +12,69 @@ import BoundaryBox from "../components/Layout/BoundaryBox";
 import SpacerBox from "../components/Layout/SpacerBox";
 import OpenGraphImage from "@site/src/components/Layout/OpenGraphImage";
 import FollowCardanoSection from "@site/src/components/FollowCardanoSection";
-import LanguagePanel from "@site/src/components/LanguagePanel";
+import LanguagePanel, { languages } from "@site/src/components/LanguagePanel";
 import Divider from "@site/src/components/Layout/Divider";
 import Link from "@docusaurus/Link";
+
+// Hero copy per language. The hero sits above the language selector, but it
+// follows the same page-level language state, so switching anywhere on the
+// page switches it too.
+//
+// `accent` is the coloured tail of the <h1>: the live cohorts end when the
+// funding does, and that is the one time-sensitive thing on the page.
+const heroContent = {
+  en: {
+    title: "Web3 Workshops",
+    accent: "— Ending this September!",
+    description:
+      "From zero to Web3. Discover how you and your business can prepare.",
+  },
+  pt: {
+    title: "Workshops Web3",
+    accent: "— Terminam em Setembro!",
+    description:
+      "Do zero à Web3. Descubra como preparar-se e preparar o seu negócio.",
+  },
+  es: {
+    title: "Workshops Web3",
+    accent: "— ¡Terminan en septiembre!",
+    description:
+      "De cero a la Web3. Descubre cómo prepararte y preparar tu negocio.",
+  },
+  fr: {
+    title: "Workshops Web3",
+    accent: "— Fin en septembre\u00a0!",
+    description:
+      "De zéro à la Web3. Découvrez comment vous préparer, vous et votre entreprise.",
+  },
+};
+
+// The language codes the page actually has copy for, taken from the selector
+// so the two lists cannot drift apart.
+const supportedLangs = languages.map(({ code }) => code);
+
+// Which language to open the page in. `?lang=pt` wins, so a link can be
+// shared already switched (the outreach DMs go out in four languages); after
+// that it is whatever the browser asks for, matching a regional tag on its
+// base ("pt-BR" -> "pt"). Null means "no match, stay on English".
+function detectLang() {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  const requested = [];
+  const fromQuery = new URLSearchParams(window.location.search).get("lang");
+  if (fromQuery) {
+    requested.push(fromQuery);
+  }
+  requested.push(...(navigator.languages || [navigator.language || ""]));
+
+  const match = requested
+    .map((tag) => String(tag).toLowerCase().split("-")[0])
+    .find((code) => supportedLangs.includes(code));
+
+  return match || null;
+}
 
 // Overview copy per language. The language is owned by the page and shared by
 // every LanguagePanel on it, so the toggle on this section and the one on
@@ -198,12 +258,13 @@ const overviewContent = {
   },
 };
 
-function HomepageHeader() {
-  const { siteTitle } = "useDocusaurusContext()";
+function HomepageHeader({ lang }) {
+  const hero = heroContent[lang];
   return (
     <SiteHero
-      title="Web3 Workshops"
-      description="From zero to Web3. Discover how you and your business can prepare."
+      title={hero.title}
+      titleAccent={hero.accent}
+      description={hero.description}
       bannerType="starburst"
     />
   );
@@ -213,13 +274,23 @@ export default function Home() {
   const [lang, setLang] = useState("en");
   const overview = overviewContent[lang];
 
+  // The page is prerendered in English, so the visitor's language can only be
+  // read once we are in the browser: detect after mount and switch if we have
+  // their language. It runs once, so any later click on a selector stands.
+  useEffect(() => {
+    const detected = detectLang();
+    if (detected) {
+      setLang(detected);
+    }
+  }, []);
+
   return (
     <Layout
     title="Web3 Workshops | 45B.io"
     description="From zero to Web3. Discover how you and your business can prepare."
     >
       <OpenGraphImage pageName="web3" />
-      <HomepageHeader />
+      <HomepageHeader lang={lang} />
       <main>
         <BoundaryBox>
           {/* The anchor sits outside the panel so #people scrolls to the

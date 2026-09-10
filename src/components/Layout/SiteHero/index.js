@@ -3,7 +3,15 @@ import clsx from "clsx";
 import styles from "./styles.module.css";
 import OuroborosLogo from "@site/src/components/Layout/OuroborosLogo";
 
-export default function SiteHero({ title, description, bannerType }) {
+// `titleAccent` is optional: a short, coloured add-on rendered inside the same
+// <h1> as the title (e.g. a closing date). It is skipped by the ouroboros
+// banner, whose heading is the logo rather than text.
+export default function SiteHero({
+  title,
+  titleAccent,
+  description,
+  bannerType,
+}) {
 
   // Use bannerType to dynamically change the class for the hero banner
   let heroClassName;
@@ -60,7 +68,19 @@ export default function SiteHero({ title, description, bannerType }) {
           {
               bannerType === "ouroboros"
                 ? <h1 className="hero__title"><OuroborosLogo className={styles.ouroborosLogo} /></h1>
-                : <h1 className="hero__title">{title}</h1>
+                : (
+                  <h1 className="hero__title">
+                    {title}
+                    {titleAccent && (
+                      <>
+                        {" "}
+                        <span className={styles.titleAccent}>
+                          {titleAccent}
+                        </span>
+                      </>
+                    )}
+                  </h1>
+                )
             }
             <p className={clsx("hero__subtitle", styles.subtitle)}>
               {description}
