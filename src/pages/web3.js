@@ -3,8 +3,9 @@ import Layout from "@theme/Layout";
 import SiteHero from "@site/src/components/Layout/SiteHero";
 import ImageWithText from "@site/src/components/Layout/ImageWithText";
 import ContentOutlineSection from "@site/src/components/ContentOutlineSection";
+import UpcomingCallsSection from "@site/src/components/UpcomingCallsSection";
 import ApplyButton from "@site/src/components/ApplyButton";
-import VideoEmbed from "@site/src/components/VideoEmbed";
+import VideoPlayer from "@site/src/components/VideoPlayer";
 import ProfileChips from "@site/src/components/ProfileChips";
 import SelectionHighlight from "@site/src/components/SelectionHighlight";
 import BackgroundWrapper from "@site/src/components/Layout/BackgroundWrapper";
@@ -316,10 +317,16 @@ export default function Home() {
 
           <SpacerBox size="small" />
 
-          <VideoEmbed
-            videoUrl={
-              "https://www.youtube-nocookie.com/embed/eXiTojtZ6N8?autoplay=1&mute=1"
-            }
+          {/* Self-hosted rather than a YouTube embed: `controls=0` only ever
+              removed YouTube's control bar, leaving its play button, title and
+              end-screen to be painted over inside a cross-origin iframe. See
+              VideoPlayer for the whole reasoning. The YouTube link stays as a
+              way out to the original. */}
+          <VideoPlayer
+            src="/video/web3-promo.mp4"
+            poster="/img/web3/video-cover.jpg"
+            youtubeUrl="https://www.youtube.com/watch?v=eXiTojtZ6N8"
+            label="45B Web3 Workshops promo"
           />
 
           <ApplyButton lang={lang} />
@@ -329,6 +336,12 @@ export default function Home() {
         <BackgroundWrapper backgroundType={"gradientDark"}>
           <ContentOutlineSection lang={lang} onLangChange={setLang} />
         </BackgroundWrapper>
+
+        {/* The schedule of live calls, generated from the invitations the
+            mailer actually sent — see the component for the data path. English
+            only and deliberately languageless: the language each session is
+            *held* in is a badge on the row, not a choice for the reader. */}
+        <UpcomingCallsSection />
 
         <FollowCardanoSection />
       </main>

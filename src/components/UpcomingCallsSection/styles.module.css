@@ -1,0 +1,251 @@
+/* Plain white in light mode, plain black in dark mode — the one flat band on
+   a page otherwise built from gradients and photographs, so the schedule
+   reads as information rather than as more marketing. Both colours are set
+   explicitly rather than inherited: this section sits directly between a dark
+   gradient above and the footer below, and must not pick up either.
+
+   The content inside sits in the same outlined pane as the overview section
+   ("What is it? How can I use it?") — LanguagePanel's light variant, drawn
+   with showSelector={false} because this section has no language to switch.
+   That pane's fill is transparent, so the white/black set here is what shows
+   through it. */
+.section {
+  background-color: #ffffff;
+  color: #1c1e21;
+  /* Less on top than the bottom: the #upcoming anchor's Divider contributes a
+     small spacer of its own above the pane. */
+  padding: 2rem 0 3.5rem;
+}
+
+[data-theme="dark"] .section {
+  background-color: #000000;
+  color: #f5f5f5;
+}
+
+/* The hero's accent amber — the same colour as "— Ending this September!" in
+   the <h1> at the top of the page, tying the schedule to the deadline it
+   belongs to.
+
+   The hero's exact #ffc857 is kept for dark mode, where it sits on black at
+   13.6:1. It cannot be used in light mode: on this section's white it falls to
+   1.54:1, well under the 3:1 large-text floor, and reads as a smear rather
+   than a heading. Light mode therefore uses the same amber darkened to
+   #a06f00 (4.4:1), which is the nearest thing to "the same colour" that is
+   actually readable. To force the hero value in both, delete the light rule
+   below and use #ffc857 here. */
+.heading {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: bold;
+  margin: 0;
+  color: #a06f00;
+}
+
+[data-theme="dark"] .heading {
+  color: #ffc857;
+}
+
+.intro {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0.75rem 0 0;
+  max-width: 46rem;
+  color: inherit;
+}
+
+.placeholder {
+  font-size: 1.05rem;
+  margin: 1.75rem 0 0;
+  opacity: 0.8;
+  color: inherit;
+}
+
+.emptyLink {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* A long session title must scroll this box, never the page. */
+.tableWrap {
+  margin-top: 1.75rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  display: table;               /* Docusaurus styles tables as inline-block */
+  margin: 0;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  vertical-align: middle;
+  padding: 0.85rem 1rem 0.85rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(28, 30, 33, 0.15);
+  background: none;
+  color: inherit;
+}
+
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+  border-bottom-color: rgba(245, 245, 245, 0.2);
+}
+
+.table th {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+/* Which language the session itself is held in — #4 (EN) and #5 (PT) run in
+   parallel, so this is the column that tells them apart. */
+.langBadge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  vertical-align: 0.1em;
+}
+
+.day {
+  display: block;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.time {
+  display: block;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.zone {
+  opacity: 0.6;
+  font-size: 0.9em;
+}
+
+.todayBadge {
+  display: inline-block;
+  margin-right: 0.45rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  background-color: #1c1e21;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  vertical-align: 0.1em;
+}
+
+[data-theme="dark"] .todayBadge {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.buttonRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* Outline buttons: three of them on every row, so a filled treatment would
+   shout louder than the session titles they belong to. */
+.calButton {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: normal;
+  line-height: 1.4;
+  border: 1px solid rgba(28, 30, 33, 0.4);
+  border-radius: 6px;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.calButton:hover,
+.calButton:focus {
+  background-color: #1c1e21;
+  color: #ffffff;
+  border-color: #1c1e21;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .calButton {
+  border-color: rgba(245, 245, 245, 0.45);
+}
+
+[data-theme="dark"] .calButton:hover,
+[data-theme="dark"] .calButton:focus {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+
+/* On a phone the three columns cannot sit side by side, so each row becomes a
+   stacked block and the header row is dropped — every cell carries its own
+   label through data-label instead. */
+@media (max-width: 768px) {
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tr {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(28, 30, 33, 0.15);
+  }
+
+  [data-theme="dark"] .table tr {
+    border-bottom-color: rgba(245, 245, 245, 0.2);
+  }
+
+  .table tr:last-child {
+    border-bottom: none;
+  }
+
+  .table td {
+    padding: 0.35rem 0;
+    border-bottom: none;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.55;
+    margin-bottom: 0.2rem;
+  }
+}

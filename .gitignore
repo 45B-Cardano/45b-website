@@ -60,3 +60,8 @@ yarn.lock
 # One-off deploy helper + its file list, generated per deploy. Not site content.
 /deploy-web3.sh
 /deploy-list.txt
+
+# Never commit credential material. The real blobs live in ~/.config/45b/ and
+# are referenced by the deploy script — see notes/45b-hosting.md in the HQ repo.
+*.enc
+.ftp-*

@@ -1,0 +1,232 @@
+.videoRow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0 1rem;
+}
+
+/* Same geometry as the embed this replaced: 960px is half of a 1920px screen,
+   which is what "half the page" looks like on a typical desktop. It does not
+   grow with the window; min(100%, …) only takes over once the column itself is
+   narrower, and from there it goes edge-to-edge down to mobile.
+   16/9 matches the source exactly (1920x1080), so nothing is letterboxed. */
+.videoWrap {
+  position: relative;
+  width: min(100%, 960px);
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #0b0b0b;
+}
+
+.video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fullscreen hands the wrapper the whole screen, whose shape will not be 16/9.
+   Letting the aspect-ratio rule win there would leave the video in a small
+   box in the middle of a black screen. */
+.videoWrap:fullscreen {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+.videoWrap:fullscreen .video {
+  object-fit: contain;
+}
+
+/* ---- The cover -----------------------------------------------------------
+   Over the paused and not-yet-started states. Where the cover image goes; a
+   flat dark panel with a play glyph until one is supplied. */
+.cover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Inset rather than edge-to-edge, so the cover reads as artwork resting in
+     the frame instead of as the frame itself. A percentage rather than a
+     fixed value: it holds the same proportion at 960px and on a phone, where
+     19px of inset would eat a third of the picture. ~19px at full width. */
+  padding: 2%;
+  background-color: #0b0b0b;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease-in-out, visibility 0s linear 0.25s;
+  pointer-events: none;   /* the click layer above takes every tap */
+}
+
+/* Fitted, never cropped. Equal padding on all four sides makes the available
+   area slightly wider than 16/9 — the same absolute inset costs proportionally
+   more height than width — so `contain` leaves a hair more dark on the left
+   and right than above and below. That is the honest trade: the alternative
+   is cropping the artwork. Its own radius is smaller than the frame's 8px,
+   which is what keeps a rounded shape inside a rounded shape from looking
+   like a mistake. */
+.coverImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+}
+
+.cover[data-visible="true"] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.15s ease-in-out, visibility 0s;
+}
+
+/* Centred over whatever is behind it, image or flat panel. Absolute rather
+   than a flex child so it sits ON the artwork instead of displacing it. */
+.coverGlyph {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* Over artwork the translucent white disc can vanish into a light area, and
+   dimming the whole image to fix that would be throwing away the thing the
+   cover exists to show. A dark disc instead — the same treatment as the
+   controls, legible on any frame, and it leaves the artwork untouched. */
+.coverGlyph[data-over-image="true"] {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.coverGlyph svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;      /* a triangle is optically off-centre in a circle */
+  fill: currentColor;
+  display: block;
+}
+
+/* ---- Controls ------------------------------------------------------------
+   Sized for a thumb first: 44px is the smallest reliably tappable target, and
+   it is the floor here rather than the desktop size. */
+.clickLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topControls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+}
+
+.overlayButton,
+.youtubeLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  /* The glyphs are white over whatever frame the video happens to be showing;
+     without the disc they disappear on a light shot. */
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.youtubeLink {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+}
+
+.clickLayer:focus-visible,
+.overlayButton:focus-visible,
+.youtubeLink:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.glyph {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
+  pointer-events: none;   /* the button takes the click, never the svg */
+}
+
+/* Wider than it is tall, so it needs its own box or it reads optically small
+   beside the round glyphs. */
+.youtubeGlyph {
+  width: 21.6px;    /* 24 x 0.9 */
+  height: 15.3px;   /* 17 x 0.9 */
+  fill: currentColor;
+  display: block;
+  pointer-events: none;
+}
+
+/* The YouTube mark stays dim at all times — it is a way out to somewhere else,
+   not one of the controls, and it should never compete with them. Set here,
+   outside the hover block below, so nothing can brighten it.
+
+   It is also drawn 10% smaller than the two controls: 39.6px against their
+   44px. The element itself stays 44px, though — the padding plus a
+   content-box background clip shrink only the *painted* disc, so the tap
+   target is unchanged. Below about 44px a target starts needing to be aimed
+   at on a phone, and this is the control someone is most likely to hit by
+   accident on the way to something else. The glyph is scaled by the same 10%
+   so the mark keeps its proportion inside the disc. */
+.youtubeLink {
+  opacity: 0.45;
+  box-sizing: border-box;
+  padding: 2.2px;
+  background-clip: content-box;
+}
+
+/* Hover does not exist on touch, so there the controls simply stay visible.
+   On a pointer device they rest lower and come up together when the mouse is
+   anywhere over the video — the YouTube mark excepted, deliberately. */
+@media (hover: hover) and (pointer: fine) {
+  .overlayButton {
+    opacity: 0.65;
+    transition: opacity 0.15s ease-in-out, background-color 0.15s ease-in-out;
+  }
+
+  .videoWrap:hover .overlayButton,
+  .overlayButton:focus-visible {
+    opacity: 1;
+  }
+
+  .videoWrap:hover .overlayButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}

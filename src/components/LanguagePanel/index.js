@@ -25,11 +25,18 @@ export const languages = [
   { code: "fr", label: "Français", short: "FR" },
 ];
 
+// `showSelector`: false draws the panel on its own, with nothing on its top
+// edge. The upcoming-calls section wants the same pane as the rest of the page
+// but has no language of its own to switch — its content is English only, and
+// the language each session is held in is a badge on the row, not a choice.
+// Kept here rather than copied into a second component so the pane outline has
+// one owner and the two cannot drift apart.
 export default function LanguagePanel({
   lang,
   onLangChange,
   variant = "light",
   label = "Content language",
+  showSelector = true,
   className,
   children,
 }) {
@@ -37,32 +44,34 @@ export default function LanguagePanel({
 
   return (
     <div className={clsx(styles.wrap, variantClass, className)}>
-      <div className={styles.tabList} role="tablist" aria-label={label}>
-        {languages.map(({ code, label: languageLabel, short }) => (
-          <button
-            key={code}
-            type="button"
-            role="tab"
-            aria-selected={lang === code}
-            className={clsx(styles.tabButton, {
-              [styles.tabButtonActive]: lang === code,
-            })}
-            onClick={() => onLangChange(code)}
-            /* the visible text is the abbreviation on narrow screens, so the
-               accessible name is pinned to the full language name instead */
-            aria-label={languageLabel}
-          >
-            <span className={styles.tabLabelFull} aria-hidden="true">
-              {languageLabel}
-            </span>
-            <span className={styles.tabLabelShort} aria-hidden="true">
-              {short}
-            </span>
-          </button>
-        ))}
-      </div>
+      {showSelector && (
+        <div className={styles.tabList} role="tablist" aria-label={label}>
+          {languages.map(({ code, label: languageLabel, short }) => (
+            <button
+              key={code}
+              type="button"
+              role="tab"
+              aria-selected={lang === code}
+              className={clsx(styles.tabButton, {
+                [styles.tabButtonActive]: lang === code,
+              })}
+              onClick={() => onLangChange(code)}
+              /* the visible text is the abbreviation on narrow screens, so the
+                 accessible name is pinned to the full language name instead */
+              aria-label={languageLabel}
+            >
+              <span className={styles.tabLabelFull} aria-hidden="true">
+                {languageLabel}
+              </span>
+              <span className={styles.tabLabelShort} aria-hidden="true">
+                {short}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
 
-      <div className={styles.panel} role="tabpanel">
+      <div className={styles.panel} {...(showSelector ? { role: "tabpanel" } : {})}>
         {children}
       </div>
     </div>
