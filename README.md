@@ -1,5 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8cf7b954-67c1-4533-b3b5-fa74f47286a4/deploy-status)](https://app.netlify.com/sites/new-cardano-org-staging/deploys)
-
 # Website
 
 Welcome to the cardano.org website. We believe that this website should be managed by a collective and not a single entity. For this to be successful, the website relies on your contributions.  
@@ -68,3 +66,54 @@ This command generates static content into the `build` directory and can be serv
 yarn start --host 0.0.0.0   
 ```
 With this command you are making it listen on all network interfaces (IP addresses) of your computer. This includes the local loopback interface (127.0.0.1 or localhost) and any other network interfaces that can connect your computer to a local network or the internet. Great for testing the site with different devices on your local network.
+
+## Quick util commands
+
+```
+cd ~/proj/Web3/45b-website && git push origin develop
+```
+
+Push the working branch to GitHub. `develop` is where work happens and what
+deploys; `main` is the stable backup.
+
+```
+yarn serve
+```
+
+Serve the existing `build/` directory locally — the built site, not the dev
+server. Use it to check what will actually ship before deploying. Run
+`yarn build` first if the build is older than your changes.
+
+```
+cd ~/proj/Web3/45b-website && ./deploy-web3.sh --skip-build
+```
+
+Deploy the `build/` tree as it stands: diff against `.last-deploy/`, confirm,
+upload only what changed, refresh the baseline. `--skip-build` reuses the
+existing build, so drop it (plain `./deploy-web3.sh`) whenever the build does
+not already include your changes. Uploads are additive — nothing on the host
+is ever deleted. See `notes/45b-hosting.md` and `notes/45b-website.md` in the
+HQ repo before deploying.
+
+## Logging date time along Terminal history
+
+Logs visually on the terminal:
+date; (your command)
+
+Let history command to show time:
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+
+How It Works
+    Automatic Logging: Once set, Bash automatically records the exact Unix timestamp into your .bash_history file alongside every subsequent command you execute.
+
+    Viewing History: When you run `history`, the timestamps appear right next to the corresponding commands:
+
+Run
+history 5
+to show the last 5 commands with datetime visible
+
+
+More info:
+Adding Timestamps to Linux Terminal History - Google Gemini - Skywalker
+https://gemini.google.com/app/a75e984bffbbe83d
+

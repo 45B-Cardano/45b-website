@@ -290,7 +290,7 @@ export default function Home() {
     title="Web3 Workshops | 45B.io"
     description="From zero to Web3. Discover how you and your business can prepare."
     >
-      <OpenGraphImage pageName="web3" />
+      <OpenGraphImage pageName="web3" fileName="web3-flyer.jpg" />
       <HomepageHeader lang={lang} />
       <main>
         <BoundaryBox>
