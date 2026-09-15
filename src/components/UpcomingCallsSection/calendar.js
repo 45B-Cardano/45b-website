@@ -18,11 +18,23 @@
 //              private copy unconnected to the original. Fine for "put it in
 //              my diary"; it is the .ics that preserves identity.
 //
-// The .ics is built nowhere in this file. It arrives ready-made in the event
-// data and is handed over untouched; rebuilding it is exactly what would
-// destroy the fidelity above.
+// The .ics is built nowhere in this file. It arrives ready-made — fetched from
+// the mailer, or inlined in the baked snapshot — and is handed over untouched;
+// rebuilding it is exactly what would destroy the fidelity above.
 
 const PAGE_URL = "https://45b.io/web3";
+
+// The mailer's published schedule. Relative on purpose: the mailer and this
+// site share the 45b.io document root, so this is same-origin in production —
+// which is what makes both the fetch (no CORS) and the .ics link (browsers
+// honour `download` only same-origin) work with nothing configured.
+export const FEED_URL = "/mailer/events.php";
+
+// The real invitation for one event, by UID. Same file the mailer sent, with
+// the attendee list removed.
+export function icsUrl(event) {
+  return FEED_URL + "?ics=" + encodeURIComponent(event.uid);
+}
 
 // A URL that grows past what a browser or an intermediate proxy will carry
 // fails silently — Google shows an empty form rather than an error. The
@@ -83,8 +95,10 @@ export function outlookUrl(event, fallback) {
   return "https://outlook.live.com/calendar/0/deeplink/compose?" + params.toString();
 }
 
-// A Blob rather than a data: URI — Safari refuses to download a data: URL
-// opened from a link, and the file opens as text instead of importing.
+// Only for rows coming from the baked snapshot, which carries the VCALENDAR
+// inline; a live row uses icsUrl() above instead. A Blob rather than a data:
+// URI — Safari refuses to download a data: URL opened from a link, and the file
+// opens as text instead of importing.
 export function downloadIcs(ics, filename) {
   const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
   const url = URL.createObjectURL(blob);

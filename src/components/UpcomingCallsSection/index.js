@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 import Divider from "@site/src/components/Layout/Divider";
 import LanguagePanel from "@site/src/components/LanguagePanel";
 import eventsData from "@site/src/data/web3Events.json";
-import { googleUrl, outlookUrl, downloadIcs } from "./calendar";
+import { googleUrl, outlookUrl, downloadIcs, icsUrl, FEED_URL } from "./calendar";
 
 //
 // This component:
@@ -14,11 +14,20 @@ import { googleUrl, outlookUrl, downloadIcs } from "./calendar";
 // WHERE THE DATA COMES FROM
 // Every session is authored as a Google Calendar event, mailed out as a real
 // invitation by 45b-mailer, and therefore lives — as a VCALENDAR — inside a
-// campaign file on the web host. `45b-mailer/tools/events-export.py` reads a
-// pulled copy of those campaigns and writes the public slice of them to
-// src/data/web3Events.json, which is what this imports. Regenerate that file
-// and rebuild whenever the schedule changes; nothing here talks to the host
-// at run time.
+// campaign file on the web host. That campaign store is the only
+// machine-readable record of when a call is.
+//
+// Since 2026-09-15 this page reads it live: the mailer exposes the published
+// slice at /mailer/events.php, and because the mailer and this site share a
+// document root that is a same-origin request — no CORS, no host to hard-code,
+// and no rebuild when the schedule changes. A campaign appears there only if it
+// has been ticked "show on 45b.io/web3" by hand in the tool.
+//
+// src/data/web3Events.json is still imported, but only as the fallback for when
+// that request fails. It is a snapshot from `45b-mailer/tools/events-export.py`,
+// which does the same job offline against a pulled copy of the campaigns. It
+// can only ever be *missing* newer calls, never showing stale ones, because the
+// end-time filter below runs over whichever source won.
 //
 // ENGLISH ONLY, ON PURPOSE
 // The rest of /web3 switches between four languages. This section does not:
@@ -118,17 +127,49 @@ function isToday(event) {
 export default function UpcomingCallsSection() {
   // Nothing time-dependent is rendered until this flips — see the note above.
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // The live schedule, or null while it is in flight and for good if it never
+  // arrives. Null is the signal to stay on the baked snapshot.
+  const [remote, setRemote] = useState(null);
+
+  useEffect(() => {
+    setMounted(true);
+
+    // Aborted rather than left hanging: on a slow connection this should give
+    // up and let the baked copy stand rather than holding an empty table open.
+    const stop = new AbortController();
+    const timer = setTimeout(() => stop.abort(), 8000);
+
+    fetch(FEED_URL, { signal: stop.signal })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        if (data && Array.isArray(data.events)) setRemote(data.events);
+      })
+      // Deliberately silent. A visitor cannot act on "the schedule endpoint is
+      // down", and the fallback below means they still see a schedule.
+      .catch(() => {})
+      .finally(() => clearTimeout(timer));
+
+    return () => {
+      clearTimeout(timer);
+      stop.abort();
+    };
+  }, []);
+
+  // True once the page is showing the host's answer rather than the snapshot.
+  // The .ics button needs to know: live rows are fetched from the mailer by
+  // UID, snapshot rows carry their own copy of the file.
+  const live = remote !== null;
 
   const events = useMemo(() => {
     if (!mounted) return [];
     const now = Date.now();
+    const source = remote || eventsData.events || [];
     // A call that has started but not finished is still worth showing: a
     // visitor can join late. It drops off the list at its end time.
-    return (eventsData.events || [])
+    return source
       .filter((event) => new Date(event.end).getTime() >= now)
       .sort((a, b) => new Date(a.start) - new Date(b.start));
-  }, [mounted]);
+  }, [mounted, remote]);
 
   return (
     <section className={styles.section}>
@@ -224,11 +265,24 @@ export default function UpcomingCallsSection() {
                             >
                               Outlook
                             </a>
-                            {/* The real invitation, served untouched. Absent
-                                only if an event ever reaches the page without
-                                one, in which case offering a rebuilt file
-                                would be worse than offering none. */}
-                            {event.ics ? (
+                            {/* The real invitation, served untouched. Two
+                                routes to the same file: a live row fetches it
+                                from the mailer by UID, which is same-origin so
+                                `download` is honoured; a row from the baked
+                                snapshot carries its own copy and is handed over
+                                as a Blob. Absent only if an event reaches the
+                                page with neither, in which case offering a
+                                rebuilt file would be worse than offering
+                                none. */}
+                            {live && event.uid ? (
+                              <a
+                                className={clsx("button", styles.calButton)}
+                                href={icsUrl(event)}
+                                download
+                              >
+                                Invite (.ics)
+                              </a>
+                            ) : event.ics ? (
                               <button
                                 type="button"
                                 className={clsx("button", styles.calButton)}
